@@ -37,6 +37,11 @@ def load_jsonl(path: Path) -> list[dict]:
         return [json.loads(line) for line in handle if line.strip()]
 
 
+def _render(node: str, inputs: dict) -> str:
+    messages = prompts.build(node, inputs, include_answer=False)["messages"]
+    return "\n".join(f"[{m['role']}] {m['content']}" for m in messages)
+
+
 def build_calibration_texts(calib_dir: Path, per_node: int) -> list[str]:
     """把 dev 集按训练时的 prompt 格式拼成纯文本，作为量化校准语料。
 
@@ -51,8 +56,26 @@ def build_calibration_texts(calib_dir: Path, per_node: int) -> list[str]:
             continue
         rows = load_jsonl(path)[:per_node]
         for row in rows:
-            messages = prompts.build(node, row["input"], include_answer=False)["messages"]
-            texts.append("\n".join(f"[{m['role']}] {m['content']}" for m in messages))
+            texts.append(_render(node, row["input"]))
+    return texts
+
+
+def fill_from_train(path: Path, need: int) -> list[str]:
+    """dev 集不够 512 条时，用领域训练集（N1/N2 真实文本）补足校准语料。
+
+    只用 data/train.jsonl，不用 bench test——校准集碰到 test 等于让量化"见过考题"，
+    精度数字会失真。N3/N4 的输入结构特殊，不从原始训练集补。
+    """
+    if not path.exists() or need <= 0:
+        return []
+    rows = load_jsonl(path)
+    texts: list[str] = []
+    for index, row in enumerate(rows):
+        if len(texts) >= need:
+            break
+        if "text" not in row:
+            continue
+        texts.append(_render("n1_intent" if index % 2 == 0 else "n2_slot", {"text": row["text"]}))
     return texts
 
 
@@ -61,6 +84,8 @@ def main() -> None:
     parser.add_argument("--model", required=True, help="merge 后的 bf16 全量权重目录")
     parser.add_argument("--output", required=True)
     parser.add_argument("--calib-dir", default=str(BASE / "bench"))
+    parser.add_argument("--fill-from", default=str(BASE / "data" / "train.jsonl"),
+                        help="dev 不足以凑满校准样本时，从此领域训练集补充；传空串禁用")
     parser.add_argument("--per-node", type=int, default=128, help="每个节点取多少条 dev 作校准")
     parser.add_argument("--num-calibration-samples", type=int, default=512)
     parser.add_argument("--max-seq-len", type=int, default=2048)
@@ -71,8 +96,16 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true", help="只准备校准集并打印配置")
     args = parser.parse_args()
 
-    texts = build_calibration_texts(Path(args.calib_dir), args.per_node)
-    print(f"[info] 校准样本 {len(texts)} 条（上限 {args.num_calibration_samples}），"
+    dev_texts = build_calibration_texts(Path(args.calib_dir), args.per_node)
+    texts = list(dev_texts)
+    if len(texts) < args.num_calibration_samples and args.fill_from:
+        extra = fill_from_train(Path(args.fill_from), args.num_calibration_samples - len(texts))
+        texts += extra
+        if extra:
+            print(f"[info] dev 仅 {len(dev_texts)} 条，从 {args.fill_from} 补 {len(extra)} 条领域样本")
+
+    print(f"[info] 校准样本 {len(texts)} 条（dev {len(dev_texts)} + 补充 {len(texts) - len(dev_texts)}，"
+          f"实际使用 {min(args.num_calibration_samples, len(texts))}），"
           f"max_seq_len={args.max_seq_len}, scheme={args.scheme}, group_size={args.group_size}")
     if not texts:
         raise SystemExit("校准集为空，先跑 bench/build_bench.py")
@@ -119,6 +152,11 @@ def main() -> None:
                 "group_size": args.group_size,
                 "ignore": args.ignore,
                 "calibration_samples": min(args.num_calibration_samples, len(texts)),
+                "calibration_sources": {
+                    "bench_dev": len(dev_texts),
+                    "fill_from_training": len(texts) - len(dev_texts),
+                    "fill_path": args.fill_from or None,
+                },
                 "max_seq_length": args.max_seq_len,
                 "source_model": args.model,
             },

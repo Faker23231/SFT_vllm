@@ -288,7 +288,8 @@ evalscope perf \
 ### 7.1 量化
 
 - 输入：P6 merge 后的 **bf16 全精度权重**（量化 adapter 或 4bit 基座是错的）。
-- 校准集：**本项目 bench 的 dev 集** 512 条（领域分布），`max_seq_len=2048`。
+- 校准集：**本项目 bench 的 dev 集**（实际仅 108 条，不够 512）+ 从 `data/train.jsonl` 补领域样本凑满 512 条，`max_seq_len=2048`；来源比例写进 `quant_config.json`。
+  - 注意：不要用 bench test 补，否则等于让量化"见过考题"，精度数字失真。
 - 工具：llm-compressor，`GPTQModifier(scheme="W4A16", targets="Linear", ignore=["lm_head"])`，`group_size=128`。
 
 ```bash

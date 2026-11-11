@@ -88,9 +88,11 @@ def perf_command(args, work_dir: Path) -> list[str]:
         "--model", args.model,
         "--url", f"{base_url}/v1/chat/completions",
         "--api", "openai",
-        "--dataset", "openqa",
+        "--dataset", args.perf_dataset,
+        "--tokenizer-path", args.tokenizer_path,
         "--parallel", *[str(value) for value in args.parallel],
-        "--number", str(args.number),
+        # 这个版本的 evalscope 要求 number 与 parallel 等长（一档并发一个请求数）
+        "--number", *[str(args.number)] * len(args.parallel),
         "--max-tokens", "256",
         "--min-prompt-length", "128",
         "--max-prompt-length", "1024",
@@ -126,6 +128,9 @@ def main() -> None:
     parser.add_argument("--perf", action="store_true", help="跑并发压测")
     parser.add_argument("--parallel", type=int, nargs="+", default=[1, 4, 8, 16, 32])
     parser.add_argument("--number", type=int, default=50, help="每档并发的请求数")
+    parser.add_argument("--perf-dataset", default="random", choices=["random", "openqa"],
+                        help="压测数据；random 不需要下载数据集，但要给 tokenizer")
+    parser.add_argument("--tokenizer-path", default="/data/models/qwen3-14b")
     parser.add_argument("--dry-run", action="store_true", help="只打印命令，不执行")
     args = parser.parse_args()
 

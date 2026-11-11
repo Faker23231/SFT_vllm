@@ -345,10 +345,13 @@ def format_report(result: dict) -> str:
     for key, value in result["metrics"].items():
         if isinstance(value, dict):
             continue
-        if isinstance(value, float):
+        if isinstance(value, float) and 0 <= value <= 1:
             lines.append(f"| {key} | {value * 100:.2f}% |")
-        else:
+        elif isinstance(value, float):
+            # avg_chars 这类绝对量不是比例，乘 100 会变成 3908.00%
             lines.append(f"| {key} | {value:.2f} |")
+        else:
+            lines.append(f"| {key} | {value} |")
     confusion = result["metrics"].get("confusion")
     if confusion:
         lines.append(f"| confusion | TP={confusion['tp']} FP={confusion['fp']} "

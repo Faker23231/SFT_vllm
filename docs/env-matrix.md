@@ -22,11 +22,16 @@
 
 | 项 | 值 |
 |---|---|
-| 平台 / 卡型 | 待填（A100 40G / L20 48G / 4090 48G） |
-| 镜像 | 待填（PyTorch 2.x + CUDA 12.4/12.8） |
-| 实例创建时间 | 待填 |
+| 平台 / 卡型 | NVIDIA A100-PCIE-40GB（40960 MiB，单卡） |
+| 镜像 | 自带 python 3.12.13 + 驱动 560.35.03（CUDA 12.6 驱动，nvcc 12.8） |
+| 实例创建时间 | 2026-11-11 16:51 |
 | 关机时间 | 待填 |
 | 计费卡时 | 待填（目标 ≤4.5h） |
+
+**重要坑**：`pip install vllm` 默认装 0.33.0（CUDA 13 版 torch），在 560 驱动上
+`torch.cuda.is_available()` = False（`found version 12060`）。必须钉 **vllm==0.11.2**（torch 2.9.0+cu128）。
+另外 pip 用 `mirrors.cloud.tencent.com` 约 16~90MB/s，aliyun/pypi 只有 0.4MB/s；
+`rm -rf` 在本环境会被转进 `/data/.Trash-0`（占 22G 不释放），清理要用 `find ... -delete`。
 
 ### S2（合成 + 训练 + 量化 + 总评）
 
@@ -52,25 +57,26 @@ nvcc --version | tail -2
 
 | 组件 | S1 实测 | S2 实测 | 备注 |
 |---|---|---|---|
-| python | | | 3.11 |
-| torch | | | cu128 |
-| vllm | | | |
-| transformers | | | |
-| peft / trl | | | trl ≥ 0.20 才有 `assistant_only_loss` |
-| llm-compressor | | | GPTQ 量化 |
-| evalscope | | | `--eval-type` 取值需核对版本 |
-| CUDA / 驱动 | | | |
+| python | 3.12.13 | | 3.11 |
+| torch | 2.9.0+cu128 | | cu128；cu13 版在 560 驱动上不可用 |
+| vllm | 0.11.2 | | 0.33.0 需 CUDA 13 驱动，勿用 |
+| transformers | 4.57.6 | | |
+| peft / trl | 未装 | | trl ≥ 0.20 才有 `assistant_only_loss`；S2 前补装 |
+| llm-compressor | 未装 | | GPTQ 量化；S2 前补装 |
+| evalscope | 1.14.1 | | 压测需额外 `evalscope[perf]`（缺 sse_starlette 会 ImportError） |
+| CUDA / 驱动 | 12.8 / 560.35.03 | | nvcc V12.8.93 |
 
 ## 4. vLLM 关键日志（每次起服务都记一次）
 
 | 项 | bf16 | GPTQ W4A16 | 说明 |
 |---|---|---|---|
-| 模型路径 | | | |
-| `GPU KV cache size` | | | 决定理论并发 |
-| `Maximum concurrency` | | | 与 `max-num-seqs` 的关系 |
-| attention backend | | | A100 一般为 FlashAttention，4090 为 FlashInfer/XFormers |
-| 非 torch 显存 | | | CUDA graph / activation |
-| 启动耗时 | | | |
+| 模型路径 | `/data/models/qwen3-14b` | | 微调后待填 |
+| `GPU KV cache size` | 50,608 tokens | | 36G−28G 权重后的 KV 预算 |
+| `Maximum concurrency` | 6.18x @8192 | | max-num-seqs=32 实际被 KV 卡在 6 |
+| attention backend | FLASH_ATTN | | sm80 走 FlashAttention |
+| 非 torch 显存 | 见启动日志 Memory profiling | | CUDA graph / activation |
+| 启动耗时 | ~70s（含 8 shard 加载） | | |
+| `gptq_marlin` 是否命中 | — | | 量化没走 marlin 等于白量化 |
 | `gptq_marlin` 是否命中 | — | | 量化没走 marlin 等于白量化 |
 
 采集命令：

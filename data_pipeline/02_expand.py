@@ -143,6 +143,9 @@ def run_mock(seeds: list[dict], times: int) -> list[dict]:
                     "node": node,
                     "seed_id": record["id"],
                     "style": style,
+                    # 透传分层信息：用 bench test 当种子做金标替换时要靠它做分层配额
+                    "difficulty": record.get("difficulty"),
+                    "category": record.get("category"),
                     "input": candidate["input"],
                     "gold": record["gold"],
                     "constraints": record.get("constraints"),
@@ -199,6 +202,8 @@ def run_vllm(seeds: list[dict], times: int, args) -> list[dict]:
                 "node": record["node"],
                 "seed_id": record["id"],
                 "style": index % len(STYLES),
+                "difficulty": record.get("difficulty"),
+                "category": record.get("category"),
                 "input": candidate["input"],
                 "gold": record["gold"],
                 "constraints": record.get("constraints"),
@@ -218,9 +223,11 @@ def run_vllm(seeds: list[dict], times: int, args) -> list[dict]:
 # ---------------------------------------------------------------- OpenAI 后端
 
 
-def chat(api_url: str, api_key: str, messages: list[dict], max_tokens: int, temperature: float) -> str:
+def chat(api_url: str, api_key: str, messages: list[dict], max_tokens: int, temperature: float,
+         model: str = "qwen3-14b") -> str:
+    # model 必须是 vLLM --served-model-name 的实际值，写死 "default" 会被 404
     payload = json.dumps(
-        {"model": "default", "messages": messages, "max_tokens": max_tokens, "temperature": temperature}
+        {"model": model, "messages": messages, "max_tokens": max_tokens, "temperature": temperature}
     ).encode("utf-8")
     request = urllib.request.Request(
         api_url, data=payload,
@@ -241,7 +248,8 @@ def run_openai(seeds: list[dict], times: int, args) -> list[dict]:
     def do_rewrite(job):
         record, index, style, text = job
         try:
-            new_text = chat(args.api_url, args.api_key, rewrite_messages(record["node"], text, style), 512, 0.8)
+            new_text = chat(args.api_url, args.api_key, rewrite_messages(record["node"], text, style),
+                            512, 0.8, model=args.api_model)
             new_text = new_text.splitlines()[0].strip() or text
         except Exception as exc:  # 网络抖动不中断整批
             print(f"[warn] 改写失败 {record['id']}#{index}: {exc}")
@@ -260,6 +268,8 @@ def run_openai(seeds: list[dict], times: int, args) -> list[dict]:
                 "node": record["node"],
                 "seed_id": record["id"],
                 "style": style,
+                "difficulty": record.get("difficulty"),
+                "category": record.get("category"),
                 "input": candidate["input"],
                 "gold": record["gold"],
                 "constraints": record.get("constraints"),
@@ -271,7 +281,7 @@ def run_openai(seeds: list[dict], times: int, args) -> list[dict]:
         try:
             item["raw"] = chat(args.api_url, args.api_key,
                                annotate_messages(item["node"], item),
-                               args.annotate_max_tokens, 0.0)
+                               args.annotate_max_tokens, 0.0, model=args.api_model)
         except Exception as exc:
             print(f"[warn] 标注失败 {item['id']}: {exc}")
             item["raw"] = ""
@@ -292,12 +302,17 @@ def main() -> None:
     parser.add_argument("--out", default=str(PIPE / "out" / "candidates.jsonl"))
     parser.add_argument("--times", type=int, default=2, help="每条种子生成几份改写")
     parser.add_argument("--limit", type=int, default=0, help="只用前 N 条种子（先小样本估时长）")
+    parser.add_argument("--seed-factor", type=int, default=0,
+                        help="每条种子重复几遍；0 = 自动（N3/N4 为 5 倍，其余 1 倍）。"
+                             "用 bench test 当种子做金标替换时传 1，避免重复样本")
     parser.add_argument("--model", default="/root/autodl-tmp/models/qwen3-14b")
     parser.add_argument("--max-model-len", type=int, default=4096)
     parser.add_argument("--gpu-memory-utilization", type=float, default=0.85)
     parser.add_argument("--annotate-max-tokens", type=int, default=256)
     parser.add_argument("--api-url", default="http://127.0.0.1:8000/v1/chat/completions")
     parser.add_argument("--api-key", default="EMPTY")
+    parser.add_argument("--api-model", default="qwen3-14b",
+                        help="openai 后端请求体里的 model，必须等于 vLLM --served-model-name")
     parser.add_argument("--concurrency", type=int, default=8)
     args = parser.parse_args()
 
@@ -305,7 +320,8 @@ def main() -> None:
     for path in sorted(Path(args.seeds_dir).glob("*.jsonl")):
         rows = load_jsonl(path)
         # N3/N4 人工种子少，自动多扩几倍，避免合成集被 N1/N2 淹没
-        factor = 5 if rows and rows[0]["node"] in ("n3_reply", "n4_escalate") else 1
+        auto_factor = 5 if rows and rows[0]["node"] in ("n3_reply", "n4_escalate") else 1
+        factor = args.seed_factor or auto_factor
         for record in rows:
             seeds.extend([record] * factor)
         print(f"[seed] {path.name}: {len(rows)} 条 × {factor}")

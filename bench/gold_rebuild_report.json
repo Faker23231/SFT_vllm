@@ -1,0 +1,20 @@
+[
+  {
+    "node": "n4_escalate",
+    "template_rows": 300,
+    "candidates": 1800,
+    "kept": 300,
+    "unique_prompts": 319,
+    "rejected": {
+      "未改写": 89,
+      "自标与 gold 不一致": 105,
+      "与已保留样本重复": 1210
+    },
+    "difficulty": {
+      "medium": 278,
+      "easy": 15,
+      "hard": 7
+    },
+    "category_kinds": 13
+  }
+]
