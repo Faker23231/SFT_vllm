@@ -1,0 +1,4 @@
+{"text": "打开咖啡机", "intent": "iot_coffee", "slots": [{"name": "device_type", "value": "咖啡机"}]}
+{"text": "把牛奶加入购物清单", "intent": "lists_createoradd", "slots": [{"name": "list_name", "value": "购物清单"}, {"name": "food_type", "value": "牛奶"}]}
+{"text": "订一份披萨外卖", "intent": "takeaway_order", "slots": [{"name": "food_type", "value": "披萨"}]}
+{"text": "查一下去机场的路线", "intent": "transport_query", "slots": [{"name": "place_name", "value": "机场"}]}

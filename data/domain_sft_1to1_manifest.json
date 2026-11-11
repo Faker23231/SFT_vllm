@@ -1,0 +1,40 @@
+{
+  "name": "1to1",
+  "ratio": "1:1",
+  "actual_ratio": "2352:1855",
+  "real": 2352,
+  "synthetic_available": 1855,
+  "synthetic_used": 1855,
+  "synthetic_backend": [
+    "mock"
+  ],
+  "train": 3786,
+  "validation": 421,
+  "nodes": {
+    "n1_intent": 2085,
+    "n2_slot": 2093,
+    "n3_reply": 20,
+    "n4_escalate": 9
+  },
+  "categories": 61,
+  "leak_check": {
+    "n1_intent": {
+      "checked": 2085,
+      "suspicious": 0
+    },
+    "n2_slot": {
+      "checked": 2093,
+      "suspicious": 0
+    },
+    "n3_reply": {
+      "checked": 20,
+      "suspicious": 0
+    },
+    "n4_escalate": {
+      "checked": 9,
+      "suspicious": 0
+    }
+  },
+  "sha256_train": "6558cbda4425a2a9",
+  "seed": 42
+}

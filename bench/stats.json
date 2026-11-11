@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "seed": 42,
+    "created_at": "2026-11-10 20:20:07",
+    "source_sha256": "659cd1a9a4cdb935"
+  },
+  "nodes": [
+    {
+      "node": "n1_intent",
+      "count": 400,
+      "synthetic": 0,
+      "categories": 59,
+      "long_tail": [
+        "audio_volume_down",
+        "audio_volume_other",
+        "general_greet",
+        "iot_hue_lighton",
+        "iot_wemo_off",
+        "music_dislikeness",
+        "transport_taxi",
+        "weather_query"
+      ],
+      "difficulty": {
+        "easy": 194,
+        "medium": 120,
+        "hard": 86
+      },
+      "difficulty_ratio": {
+        "easy": 0.485,
+        "medium": 0.3,
+        "hard": 0.215
+      },
+      "length": {
+        "min": 2,
+        "avg": 11.2,
+        "max": 44
+      },
+      "top_categories": [
+        [
+          "calendar_set",
+          12
+        ],
+        [
+          "transport_ticket",
+          12
+        ],
+        [
+          "email_sendemail",
+          11
+        ],
+        [
+          "music_likeness",
+          10
+        ],
+        [
+          "qa_maths",
+          10
+        ],
+        [
+          "social_query",
+          10
+        ],
+        [
+          "iot_hue_lightchange",
+          9
+        ],
+        [
+          "datetime_convert",
+          9
+        ]
+      ]
+    },
+    {
+      "node": "n2_slot",
+      "count": 400,
+      "synthetic": 0,
+      "categories": 54,
+      "long_tail": [
+        "audio_volume_down",
+        "audio_volume_up",
+        "datetime_convert",
+        "email_addcontact",
+        "email_querycontact",
+        "iot_cleaning",
+        "iot_wemo_off",
+        "iot_wemo_on"
+      ],
+      "difficulty": {
+        "easy": 194,
+        "medium": 120,
+        "hard": 86
+      },
+      "difficulty_ratio": {
+        "easy": 0.485,
+        "medium": 0.3,
+        "hard": 0.215
+      },
+      "length": {
+        "min": 1,
+        "avg": 10.8,
+        "max": 48
+      },
+      "top_categories": [
+        [
+          "calendar_set",
+          21
+        ],
+        [
+          "email_sendemail",
+          14
+        ],
+        [
+          "calendar_query",
+          12
+        ],
+        [
+          "email_query",
+          12
+        ],
+        [
+          "calendar_remove",
+          11
+        ],
+        [
+          "social_post",
+          10
+        ],
+        [
+          "news_query",
+          10
+        ],
+        [
+          "play_game",
+          10
+        ]
+      ]
+    },
+    {
+      "node": "n3_reply",
+      "count": 300,
+      "synthetic": 288,
+      "categories": 20,
+      "long_tail": [
+        "account",
+        "address_change",
+        "after_sale_status",
+        "coupon_rule",
+        "invoice",
+        "logistics_delay",
+        "membership",
+        "payment_fail",
+        "privacy",
+        "product_spec",
+        "reject_parcel",
+        "urge_shipment"
+      ],
+      "difficulty": {
+        "hard": 4,
+        "easy": 4,
+        "medium": 292
+      },
+      "difficulty_ratio": {
+        "hard": 0.013,
+        "easy": 0.013,
+        "medium": 0.973
+      },
+      "length": {
+        "min": 63,
+        "avg": 69.6,
+        "max": 97
+      },
+      "top_categories": [
+        [
+          "refund_progress",
+          36
+        ],
+        [
+          "reship",
+          36
+        ],
+        [
+          "logistics_stuck",
+          36
+        ],
+        [
+          "invoice_done",
+          36
+        ],
+        [
+          "exchange",
+          36
+        ],
+        [
+          "promotion",
+          36
+        ],
+        [
+          "info_missing",
+          36
+        ],
+        [
+          "rule",
+          36
+        ]
+      ]
+    },
+    {
+      "node": "n4_escalate",
+      "count": 300,
+      "synthetic": 288,
+      "categories": 13,
+      "long_tail": [
+        "abuse",
+        "address_change",
+        "coupon",
+        "legal",
+        "logistics_query",
+        "membership",
+        "money_dispute",
+        "product_spec",
+        "refund_dispute",
+        "return_rule",
+        "safety",
+        "urge"
+      ],
+      "difficulty": {
+        "easy": 5,
+        "medium": 292,
+        "hard": 3
+      },
+      "difficulty_ratio": {
+        "easy": 0.017,
+        "medium": 0.973,
+        "hard": 0.01
+      },
+      "length": {
+        "min": 59,
+        "avg": 88.0,
+        "max": 108
+      },
+      "top_categories": [
+        [
+          "synthetic",
+          288
+        ],
+        [
+          "product_spec",
+          1
+        ],
+        [
+          "money_dispute",
+          1
+        ],
+        [
+          "abuse",
+          1
+        ],
+        [
+          "legal",
+          1
+        ],
+        [
+          "safety",
+          1
+        ],
+        [
+          "return_rule",
+          1
+        ],
+        [
+          "address_change",
+          1
+        ]
+      ]
+    }
+  ],
+  "leak": {
+    "n1_intent": {
+      "checked": 400,
+      "exact_duplicate": 0,
+      "suspicious": 1,
+      "examples": [
+        {
+          "id": "n1_0370",
+          "overlap": 0.89,
+          "text": "给 newmail at gmail dot com 发送信息"
+        }
+      ]
+    },
+    "n2_slot": {
+      "checked": 400,
+      "exact_duplicate": 0,
+      "suspicious": 0,
+      "examples": []
+    },
+    "n3_reply": {
+      "checked": 300,
+      "exact_duplicate": 0,
+      "suspicious": 0,
+      "examples": []
+    },
+    "n4_escalate": {
+      "checked": 300,
+      "exact_duplicate": 0,
+      "suspicious": 0,
+      "examples": []
+    }
+  }
+}

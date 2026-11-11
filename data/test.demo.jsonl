@@ -1,0 +1,4 @@
+{"text": "帮我叫一辆出租车去公司", "intent": "transport_taxi", "slots": [{"name": "place_name", "value": "公司"}]}
+{"text": "一百美元等于多少人民币", "intent": "datetime_convert", "slots": [{"name": "currency_name", "value": "美元"}]}
+{"text": "给张伟发邮件说明天开会", "intent": "email_sendemail", "slots": [{"name": "person", "value": "张伟"}]}
+{"text": "有什么好看的电影推荐", "intent": "recommendation_movies", "slots": []}

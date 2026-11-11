@@ -1,0 +1,24 @@
+# 模型权重与训练产物（体积大，且可从代码重建）
+outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# 评测/训练报告（实例上产出，回传后放 reports/）
+reports/
+
+# 数据流水线中间产物（02 → 03 → 04 可重跑）
+data_pipeline/out/
+
+# Python / IDE
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+*.egg-info/
+
+# 打包与临时文件
+*.tar.gz
+*.zip
+.ipynb_checkpoints/

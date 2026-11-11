@@ -1,0 +1,12 @@
+{"text": "星期五早上九点叫醒我", "intent": "alarm_set", "slots": [{"name": "date", "value": "星期五"}, {"name": "time", "value": "九点"}]}
+{"text": "取消明天早上七点的闹钟", "intent": "alarm_remove", "slots": [{"name": "date", "value": "明天"}, {"name": "time", "value": "七点"}]}
+{"text": "我设了几个闹钟", "intent": "alarm_query", "slots": []}
+{"text": "明天天气怎么样", "intent": "weather_query", "slots": [{"name": "date", "value": "明天"}]}
+{"text": "帮我播放周杰伦的稻香", "intent": "play_music", "slots": [{"name": "artist_name", "value": "周杰伦"}, {"name": "song_name", "value": "稻香"}]}
+{"text": "把音量调到五", "intent": "audio_volume_up", "slots": [{"name": "change_amount", "value": "五"}]}
+{"text": "静音", "intent": "audio_volume_mute", "slots": []}
+{"text": "后天上午十点安排会议", "intent": "calendar_set", "slots": [{"name": "date", "value": "后天"}, {"name": "time", "value": "上午十点"}]}
+{"text": "我下午有什么日程", "intent": "calendar_query", "slots": [{"name": "timeofday", "value": "下午"}]}
+{"text": "给我讲个笑话", "intent": "general_joke", "slots": []}
+{"text": "你好", "intent": "general_greet", "slots": []}
+{"text": "把客厅的灯调亮一点", "intent": "iot_hue_lightup", "slots": [{"name": "house_place", "value": "客厅"}]}

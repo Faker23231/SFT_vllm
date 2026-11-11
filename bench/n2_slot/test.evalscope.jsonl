@@ -1,0 +1,400 @@
+{"query": "用户文本：删除接下来的活动", "response": "{\"intent\": \"calendar_remove\", \"slots\": []}"}
+{"query": "用户文本：今天我设啥闹钟了啊", "response": "{\"intent\": \"alarm_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}]}"}
+{"query": "用户文本：小王关闭了卧室里的灯", "response": "{\"intent\": \"iot_hue_lightoff\", \"slots\": [{\"name\": \"house_place\", \"value\": \"卧室里的\"}]}"}
+{"query": "用户文本：有一个新邮件地址有待添加到联系人", "response": "{\"intent\": \"email_sendemail\", \"slots\": []}"}
+{"query": "用户文本：一些流畅的爵士乐", "response": "{\"intent\": \"play_music\", \"slots\": [{\"name\": \"music_genre\", \"value\": \"流畅的爵士乐\"}]}"}
+{"query": "用户文本：法医的定义是什么", "response": "{\"intent\": \"qa_definition\", \"slots\": [{\"name\": \"definition_word\", \"value\": \"法医\"}]}"}
+{"query": "用户文本：我的咖啡冷了请多煮点咖啡", "response": "{\"intent\": \"iot_coffee\", \"slots\": []}"}
+{"query": "用户文本：生日愿望", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"event_name\", \"value\": \"生日\"}]}"}
+{"query": "用户文本：你能告诉我交通情况吗", "response": "{\"intent\": \"transport_traffic\", \"slots\": []}"}
+{"query": "用户文本：继续播放我正在听的有声读物的最后一章", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"player_setting\", \"value\": \"继续播放\"}, {\"name\": \"media_type\", \"value\": \"有声读物\"}]}"}
+{"query": "用户文本：口述电子邮件", "response": "{\"intent\": \"email_sendemail\", \"slots\": []}"}
+{"query": "用户文本：郑州几点", "response": "{\"intent\": \"datetime_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"郑州\"}]}"}
+{"query": "用户文本：设置一个周二和韩梅梅的会议提醒", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"周二\"}, {\"name\": \"person\", \"value\": \"韩梅梅\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：给我更多的光", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": []}"}
+{"query": "用户文本：你能帮我从一个我不常去的地方找到最新的消息吗", "response": "{\"intent\": \"news_query\", \"slots\": []}"}
+{"query": "用户文本：我今天该看些什么", "response": "{\"intent\": \"recommendation_movies\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}]}"}
+{"query": "用户文本：二乘以二等于什么", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：定个闹铃今天七点跟张总的会议", "response": "{\"intent\": \"alarm_set\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"time\", \"value\": \"七点\"}, {\"name\": \"person\", \"value\": \"张总\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：发送一封电子邮件给 juanpedro at gmail dot com", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"email_address\", \"value\": \"juanpedro at gmail dot com\"}]}"}
+{"query": "用户文本：删除自一九九零年的税单", "response": "{\"intent\": \"lists_remove\", \"slots\": [{\"name\": \"date\", \"value\": \"一九九零年\"}, {\"name\": \"list_name\", \"value\": \"税\"}]}"}
+{"query": "用户文本：查一下我定过的闹钟", "response": "{\"intent\": \"alarm_query\", \"slots\": []}"}
+{"query": "用户文本：上传我所有的播客", "response": "{\"intent\": \"play_podcasts\", \"slots\": []}"}
+{"query": "用户文本：删除日历中的全部活动", "response": "{\"intent\": \"calendar_remove\", \"slots\": []}"}
+{"query": "用户文本：我希望它能记住我的喜好当我询问时能根据我的喜好来推荐", "response": "{\"intent\": \"general_quirky\", \"slots\": []}"}
+{"query": "用户文本：二零一八年复活节是什么时候", "response": "{\"intent\": \"datetime_query\", \"slots\": [{\"name\": \"date\", \"value\": \"二零一八\"}, {\"name\": \"event_name\", \"value\": \"复活节\"}]}"}
+{"query": "用户文本：你能播放授者吗", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"player_setting\", \"value\": \"播放\"}, {\"name\": \"audiobook_name\", \"value\": \"授者\"}]}"}
+{"query": "用户文本：起床闹钟之前不要任何声音", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": [{\"name\": \"timeofday\", \"value\": \"起床\"}]}"}
+{"query": "用户文本：周五下午一点在华盛顿的那个大礼堂开会议", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"date\", \"value\": \"周五\"}, {\"name\": \"time\", \"value\": \"下午一点\"}, {\"name\": \"place_name\", \"value\": \"大礼堂\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：告诉我在沿海地区的画展", "response": "{\"intent\": \"recommendation_events\", \"slots\": [{\"name\": \"place_name\", \"value\": \"沿海\"}, {\"name\": \"event_name\", \"value\": \"画展\"}]}"}
+{"query": "用户文本：音量降低五成", "response": "{\"intent\": \"audio_volume_down\", \"slots\": [{\"name\": \"change_amount\", \"value\": \"五成\"}]}"}
+{"query": "用户文本：世界上最高峰是什么", "response": "{\"intent\": \"qa_factoid\", \"slots\": [{\"name\": \"place_name\", \"value\": \"世界\"}]}"}
+{"query": "用户文本：你今年多大", "response": "{\"intent\": \"general_quirky\", \"slots\": []}"}
+{"query": "用户文本：创建一个播放列表", "response": "{\"intent\": \"lists_createoradd\", \"slots\": []}"}
+{"query": "用户文本：我每天都想喝咖啡", "response": "{\"intent\": \"iot_coffee\", \"slots\": [{\"name\": \"date\", \"value\": \"每天\"}]}"}
+{"query": "用户文本：提醒我下午六点在机场接迈克", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"time\", \"value\": \"下午六点\"}, {\"name\": \"place_name\", \"value\": \"机场\"}, {\"name\": \"event_name\", \"value\": \"接迈克\"}]}"}
+{"query": "用户文本：打开比赛", "response": "{\"intent\": \"play_game\", \"slots\": []}"}
+{"query": "用户文本：查一下现在的当地时间和时区", "response": "{\"intent\": \"datetime_query\", \"slots\": []}"}
+{"query": "用户文本：今天的体育新闻是什么", "response": "{\"intent\": \"news_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"news_topic\", \"value\": \"体育\"}]}"}
+{"query": "用户文本：请多点灯光", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": []}"}
+{"query": "用户文本：给我的微信联系人发送新的电子邮件", "response": "{\"intent\": \"email_addcontact\", \"slots\": [{\"name\": \"email_address\", \"value\": \"微信\"}]}"}
+{"query": "用户文本：告诉我下周三或周四去广州的火车的车次", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"date\", \"value\": \"周三\"}, {\"name\": \"date\", \"value\": \"周四\"}, {\"name\": \"place_name\", \"value\": \"广州\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：打开微博发给华为说我的手机电池总是没电", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"微博\"}, {\"name\": \"business_name\", \"value\": \"华为\"}]}"}
+{"query": "用户文本：提示我我喜欢那首歌", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：描述计算机硬盘", "response": "{\"intent\": \"qa_definition\", \"slots\": [{\"name\": \"definition_word\", \"value\": \"计算机硬盘\"}]}"}
+{"query": "用户文本：查看微博热搜", "response": "{\"intent\": \"social_query\", \"slots\": [{\"name\": \"media_type\", \"value\": \"微博\"}]}"}
+{"query": "用户文本：我要睡觉了", "response": "{\"intent\": \"iot_hue_lightoff\", \"slots\": []}"}
+{"query": "用户文本：怎么做墨西哥卷饼", "response": "{\"intent\": \"cooking_recipe\", \"slots\": [{\"name\": \"food_type\", \"value\": \"墨西哥卷饼\"}]}"}
+{"query": "用户文本：保存这首歌到歌单", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：今天有什么", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}]}"}
+{"query": "用户文本：玩开心消消乐", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"开心消消乐\"}]}"}
+{"query": "用户文本：打开通讯录", "response": "{\"intent\": \"email_addcontact\", \"slots\": []}"}
+{"query": "用户文本：检查看看我是否有任何来自爸爸的新电子邮件", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"relation\", \"value\": \"爸爸\"}]}"}
+{"query": "用户文本：提醒我明天六点的会议", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"time\", \"value\": \"六点\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：十的阶乘是什么", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：告诉我清单的内容", "response": "{\"intent\": \"lists_query\", \"slots\": []}"}
+{"query": "用户文本：请给李雷叔叔发一封电子邮件内容如下是的我能做到", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"person\", \"value\": \"李雷\"}, {\"name\": \"relation\", \"value\": \"叔叔\"}]}"}
+{"query": "用户文本：周三早上九点我有个会议给我发个提醒", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"周三\"}, {\"name\": \"time\", \"value\": \"早上九点\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：关闭音箱震动", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": []}"}
+{"query": "用户文本：给提醒我下周五和李雷开会", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"周五\"}, {\"name\": \"person\", \"value\": \"李雷\"}, {\"name\": \"event_name\", \"value\": \"开会\"}]}"}
+{"query": "用户文本：添加这封带有联系人的新邮件", "response": "{\"intent\": \"email_addcontact\", \"slots\": []}"}
+{"query": "用户文本：我需要你六点叫我起床", "response": "{\"intent\": \"alarm_set\", \"slots\": [{\"name\": \"time\", \"value\": \"六点\"}]}"}
+{"query": "用户文本：请在推特上发推文我一直在等我的必胜客外卖现在不高兴", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"推特\"}, {\"name\": \"business_name\", \"value\": \"必胜客\"}]}"}
+{"query": "用户文本：你能煮点咖啡吗", "response": "{\"intent\": \"iot_coffee\", \"slots\": []}"}
+{"query": "用户文本：为我在四月七号参加的微博活动设置重复提醒闹铃", "response": "{\"intent\": \"alarm_set\", \"slots\": [{\"name\": \"date\", \"value\": \"四月七号\"}, {\"name\": \"media_type\", \"value\": \"微博\"}]}"}
+{"query": "用户文本：你把我们正在听的这个称作什么类型的音乐", "response": "{\"intent\": \"music_query\", \"slots\": []}"}
+{"query": "用户文本：麦迪逊总统出生在哪里", "response": "{\"intent\": \"qa_factoid\", \"slots\": [{\"name\": \"person\", \"value\": \"麦迪逊\"}]}"}
+{"query": "用户文本：给我我的所有的清单", "response": "{\"intent\": \"lists_query\", \"slots\": []}"}
+{"query": "用户文本：将七十六分为两部分", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：敲敲门", "response": "{\"intent\": \"general_joke\", \"slots\": []}"}
+{"query": "用户文本：把客厅的灯关上", "response": "{\"intent\": \"iot_hue_lightoff\", \"slots\": [{\"name\": \"house_place\", \"value\": \"客厅\"}]}"}
+{"query": "用户文本：用烤箱烤土豆最好的温度是多少", "response": "{\"intent\": \"cooking_recipe\", \"slots\": [{\"name\": \"cooking_type\", \"value\": \"烤\"}, {\"name\": \"ingredient\", \"value\": \"土豆\"}]}"}
+{"query": "用户文本：打电话给最近的做外送的泰国餐厅", "response": "{\"intent\": \"takeaway_order\", \"slots\": [{\"name\": \"order_type\", \"value\": \"外送\"}, {\"name\": \"food_type\", \"value\": \"泰国\"}, {\"name\": \"business_type\", \"value\": \"餐厅\"}]}"}
+{"query": "用户文本：一百零一号", "response": "{\"intent\": \"transport_traffic\", \"slots\": [{\"name\": \"place_name\", \"value\": \"一百零一号\"}]}"}
+{"query": "用户文本：请启动扫地机器人", "response": "{\"intent\": \"iot_cleaning\", \"slots\": [{\"name\": \"device_type\", \"value\": \"扫地机器人\"}]}"}
+{"query": "用户文本：谁外卖需要花的时间少", "response": "{\"intent\": \"takeaway_query\", \"slots\": [{\"name\": \"order_type\", \"value\": \"外卖\"}]}"}
+{"query": "用户文本：腾讯游戏", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"腾讯游戏\"}]}"}
+{"query": "用户文本：今天下午一点会下雨吗", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"time\", \"value\": \"下午一点\"}, {\"name\": \"weather_descriptor\", \"value\": \"下雨\"}]}"}
+{"query": "用户文本：请把我的音箱设为静音", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": []}"}
+{"query": "用户文本：给标记这首歌五颗星", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：一加二等于多少", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：给我看看那暗淡的颜色", "response": "{\"intent\": \"iot_hue_lightdim\", \"slots\": []}"}
+{"query": "用户文本：好评如潮的电影", "response": "{\"intent\": \"recommendation_movies\", \"slots\": []}"}
+{"query": "用户文本：预订我从拉斯维加斯到洛杉矶的火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"place_name\", \"value\": \"拉斯维加斯\"}, {\"name\": \"place_name\", \"value\": \"洛杉矶\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：更多股价", "response": "{\"intent\": \"qa_stock\", \"slots\": []}"}
+{"query": "用户文本：光需要变暗点", "response": "{\"intent\": \"iot_hue_lightdim\", \"slots\": []}"}
+{"query": "用户文本：让我们玩吃鸡", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"吃鸡\"}]}"}
+{"query": "用户文本：我今天需要做什么吗", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}]}"}
+{"query": "用户文本：我设置中午吃药的闹钟了吗", "response": "{\"intent\": \"alarm_query\", \"slots\": [{\"name\": \"timeofday\", \"value\": \"中午\"}, {\"name\": \"event_name\", \"value\": \"吃药\"}]}"}
+{"query": "用户文本：今天忙吗", "response": "{\"intent\": \"general_quirky\", \"slots\": []}"}
+{"query": "用户文本：当前正在播放什么音乐", "response": "{\"intent\": \"music_query\", \"slots\": []}"}
+{"query": "用户文本：打开韩梅梅的电子邮件写我会让她知道的", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"person\", \"value\": \"韩梅梅\"}]}"}
+{"query": "用户文本：用微博发一条投诉", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"微博\"}]}"}
+{"query": "用户文本：你能停止讲话吗", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": []}"}
+{"query": "用户文本：你能帮我把灯点亮吗", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": []}"}
+{"query": "用户文本：现在时间几点了", "response": "{\"intent\": \"datetime_query\", \"slots\": []}"}
+{"query": "用户文本：我现在想关闭智能插座", "response": "{\"intent\": \"iot_wemo_off\", \"slots\": [{\"name\": \"device_type\", \"value\": \"智能插座\"}]}"}
+{"query": "用户文本：有什么人评论我的状态吗", "response": "{\"intent\": \"social_query\", \"slots\": []}"}
+{"query": "用户文本：请静音五分钟", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": [{\"name\": \"time\", \"value\": \"五分钟\"}]}"}
+{"query": "用户文本：打开一些全国公共广播电台并从我的扬声器中播放它们", "response": "{\"intent\": \"play_radio\", \"slots\": [{\"name\": \"radio_name\", \"value\": \"全国公共广播电台\"}, {\"name\": \"device_type\", \"value\": \"扬声器\"}]}"}
+{"query": "用户文本：我今天要去工作", "response": "{\"intent\": \"general_quirky\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}]}"}
+{"query": "用户文本：请检查包含工作清单的电子邮件", "response": "{\"intent\": \"email_query\", \"slots\": []}"}
+{"query": "用户文本：艾利克斯从我的日历中删除和迈克的晚餐", "response": "{\"intent\": \"calendar_remove\", \"slots\": [{\"name\": \"person\", \"value\": \"迈克\"}, {\"name\": \"meal_type\", \"value\": \"晚餐\"}]}"}
+{"query": "用户文本：把今天的教员会议安排在四点钟", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"今天的\"}, {\"name\": \"event_name\", \"value\": \"教员会议\"}, {\"name\": \"time\", \"value\": \"四点\"}]}"}
+{"query": "用户文本：标题", "response": "{\"intent\": \"music_query\", \"slots\": []}"}
+{"query": "用户文本：预定火车最划算的买卖", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：这是一首不错的曲子请给该文件加上相应的注释", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：尽快准备订单", "response": "{\"intent\": \"takeaway_query\", \"slots\": []}"}
+{"query": "用户文本：嘿 olly 试试当前的灯光设置", "response": "{\"intent\": \"iot_hue_lightchange\", \"slots\": []}"}
+{"query": "用户文本：能帮我订辆优步吗", "response": "{\"intent\": \"transport_taxi\", \"slots\": [{\"name\": \"transport_agency\", \"value\": \"优步\"}]}"}
+{"query": "用户文本：你能核实一下这个问题的事实吗", "response": "{\"intent\": \"calendar_query\", \"slots\": []}"}
+{"query": "用户文本：离我最近的动物园在哪里", "response": "{\"intent\": \"recommendation_locations\", \"slots\": []}"}
+{"query": "用户文本：亚马逊股票多少钱", "response": "{\"intent\": \"qa_stock\", \"slots\": [{\"name\": \"business_name\", \"value\": \"亚马逊\"}]}"}
+{"query": "用户文本：我看不到打开灯", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": []}"}
+{"query": "用户文本：每日新闻", "response": "{\"intent\": \"news_query\", \"slots\": []}"}
+{"query": "用户文本：每三个小时更新一次我的微博", "response": "{\"intent\": \"social_query\", \"slots\": [{\"name\": \"general_frequency\", \"value\": \"每三个小时\"}, {\"name\": \"media_type\", \"value\": \"微博\"}]}"}
+{"query": "用户文本：叶倩文多大", "response": "{\"intent\": \"qa_factoid\", \"slots\": [{\"name\": \"person\", \"value\": \"叶倩文\"}]}"}
+{"query": "用户文本：olly 给我讲个笑话", "response": "{\"intent\": \"general_joke\", \"slots\": []}"}
+{"query": "用户文本：请安排中午与李雷在青岛的会面", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"timeofday\", \"value\": \"中午\"}, {\"name\": \"person\", \"value\": \"李雷\"}, {\"name\": \"place_name\", \"value\": \"青岛\"}, {\"name\": \"event_name\", \"value\": \"会面\"}]}"}
+{"query": "用户文本：说时间", "response": "{\"intent\": \"datetime_query\", \"slots\": []}"}
+{"query": "用户文本：给出摩托罗拉的股价详情", "response": "{\"intent\": \"qa_stock\", \"slots\": [{\"name\": \"business_name\", \"value\": \"摩托罗拉\"}]}"}
+{"query": "用户文本：你能告诉我关于韦恩·格雷茨基的事吗", "response": "{\"intent\": \"qa_factoid\", \"slots\": [{\"name\": \"person\", \"value\": \"韦恩·格雷茨基\"}]}"}
+{"query": "用户文本：火车票请", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：请告诉我現在正在播放的这首歌的名称", "response": "{\"intent\": \"music_query\", \"slots\": []}"}
+{"query": "用户文本：从乐队中搜索更多歌曲", "response": "{\"intent\": \"play_music\", \"slots\": []}"}
+{"query": "用户文本：将播客收藏夹添加到播放列表并开始播放", "response": "{\"intent\": \"play_podcasts\", \"slots\": [{\"name\": \"player_setting\", \"value\": \"开始播放\"}]}"}
+{"query": "用户文本：公共图书馆在哪里", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"business_type\", \"value\": \"公共图书馆\"}]}"}
+{"query": "用户文本：如果我的收件箱里有新邮件的话请告诉我", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"email_folder\", \"value\": \"收件箱\"}]}"}
+{"query": "用户文本：嘿欧丽你能给我做杯奶油咖啡吗", "response": "{\"intent\": \"iot_coffee\", \"slots\": [{\"name\": \"coffee_type\", \"value\": \"奶油\"}]}"}
+{"query": "用户文本：上午十点的闹钟", "response": "{\"intent\": \"alarm_set\", \"slots\": [{\"name\": \"time\", \"value\": \"上午十点\"}]}"}
+{"query": "用户文本：请玩部落冲突", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"部落冲突\"}]}"}
+{"query": "用户文本：鱼汤的食谱是什么", "response": "{\"intent\": \"cooking_recipe\", \"slots\": [{\"name\": \"food_type\", \"value\": \"鱼汤\"}]}"}
+{"query": "用户文本：在我的 p. s. 四上播放酷狗音乐", "response": "{\"intent\": \"play_radio\", \"slots\": [{\"name\": \"device_type\", \"value\": \"p. s. 四\"}, {\"name\": \"app_name\", \"value\": \"酷狗音乐\"}]}"}
+{"query": "用户文本：帕提亚羊肉的食材是什么", "response": "{\"intent\": \"cooking_recipe\", \"slots\": [{\"name\": \"food_type\", \"value\": \"帕提亚羊肉\"}]}"}
+{"query": "用户文本：点亮灯光", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": []}"}
+{"query": "用户文本：开启音乐积木", "response": "{\"intent\": \"play_radio\", \"slots\": [{\"name\": \"radio_name\", \"value\": \"音乐积木\"}]}"}
+{"query": "用户文本：苹果七手机说明", "response": "{\"intent\": \"qa_definition\", \"slots\": [{\"name\": \"definition_word\", \"value\": \"苹果七\"}]}"}
+{"query": "用户文本：如果有新电子邮件了请告诉我", "response": "{\"intent\": \"email_query\", \"slots\": []}"}
+{"query": "用户文本：把灯光改为不同的色调", "response": "{\"intent\": \"iot_hue_lightchange\", \"slots\": []}"}
+{"query": "用户文本：安排我下周二上午十一点与杰西会面", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"周二\"}, {\"name\": \"time\", \"value\": \"上午十一点\"}, {\"name\": \"person\", \"value\": \"杰西\"}, {\"name\": \"event_name\", \"value\": \"会面\"}]}"}
+{"query": "用户文本：请搜索还开着的当地餐厅", "response": "{\"intent\": \"recommendation_locations\", \"slots\": [{\"name\": \"business_type\", \"value\": \"餐厅\"}]}"}
+{"query": "用户文本：这些天星巴克的股票价值多少", "response": "{\"intent\": \"qa_stock\", \"slots\": [{\"name\": \"business_name\", \"value\": \"星巴克的\"}]}"}
+{"query": "用户文本：我需要创建一个新的待办清单", "response": "{\"intent\": \"lists_createoradd\", \"slots\": [{\"name\": \"list_name\", \"value\": \"待办\"}]}"}
+{"query": "用户文本：写一封新的电子邮件但这次我得到了一个新地址 brandon at example dot com", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"email_address\", \"value\": \"brandon at example dot com\"}]}"}
+{"query": "用户文本：请告诉我路线", "response": "{\"intent\": \"transport_query\", \"slots\": []}"}
+{"query": "用户文本：提前二十四小时提醒我丽塔的生日", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"time\", \"value\": \"提前二十四小时\"}, {\"name\": \"person\", \"value\": \"丽塔的\"}, {\"name\": \"event_name\", \"value\": \"生日\"}]}"}
+{"query": "用户文本：音乐", "response": "{\"intent\": \"play_music\", \"slots\": []}"}
+{"query": "用户文本：调高音箱音量", "response": "{\"intent\": \"audio_volume_up\", \"slots\": []}"}
+{"query": "用户文本：呼叫出租车", "response": "{\"intent\": \"transport_taxi\", \"slots\": [{\"name\": \"transport_type\", \"value\": \"出租车\"}]}"}
+{"query": "用户文本：叫外卖", "response": "{\"intent\": \"takeaway_order\", \"slots\": [{\"name\": \"order_type\", \"value\": \"外卖\"}]}"}
+{"query": "用户文本：检查我收到的来自韩梅梅的新的电子邮件", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"person\", \"value\": \"韩梅梅\"}]}"}
+{"query": "用户文本：请打开所有的灯", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": [{\"name\": \"device_type\", \"value\": \"所有的灯\"}]}"}
+{"query": "用户文本：下一个按钮", "response": "{\"intent\": \"play_podcasts\", \"slots\": []}"}
+{"query": "用户文本：现在收音机里在播什么", "response": "{\"intent\": \"music_query\", \"slots\": []}"}
+{"query": "用户文本：带我去拉法耶特购物中心和圣马丁运河", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"拉法耶特购物中心和圣马丁运河\"}]}"}
+{"query": "用户文本：回复约翰", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"person\", \"value\": \"约翰\"}]}"}
+{"query": "用户文本：我想听音乐之声节目", "response": "{\"intent\": \"play_radio\", \"slots\": []}"}
+{"query": "用户文本：今天在电影院正在上映什么电影", "response": "{\"intent\": \"recommendation_movies\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"business_type\", \"value\": \"电影院\"}]}"}
+{"query": "用户文本：在联系人中找到李雷", "response": "{\"intent\": \"email_querycontact\", \"slots\": [{\"name\": \"person\", \"value\": \"李雷\"}]}"}
+{"query": "用户文本：发送电子邮件给我的助理梅梅取消明天所有预约", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"relation\", \"value\": \"助理\"}, {\"name\": \"person\", \"value\": \"梅梅\"}, {\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"event_name\", \"value\": \"预约\"}]}"}
+{"query": "用户文本：回复我老板的电子邮件说我将在晚上四点上班", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"relation\", \"value\": \"老板\"}]}"}
+{"query": "用户文本：上海有什么文化活动吗", "response": "{\"intent\": \"recommendation_events\", \"slots\": [{\"name\": \"place_name\", \"value\": \"上海\"}]}"}
+{"query": "用户文本：二月四日下午两点在青城公园增加练习", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"二月四日\"}, {\"name\": \"time\", \"value\": \"下午两点\"}, {\"name\": \"place_name\", \"value\": \"青城公园\"}]}"}
+{"query": "用户文本：协调所有流行歌曲类别", "response": "{\"intent\": \"play_music\", \"slots\": [{\"name\": \"music_genre\", \"value\": \"流行\"}]}"}
+{"query": "用户文本：我想看新闻", "response": "{\"intent\": \"news_query\", \"slots\": []}"}
+{"query": "用户文本：嗨北京现在几点", "response": "{\"intent\": \"datetime_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"北京\"}]}"}
+{"query": "用户文本：今天下午五点二十分举行的会议上老王公司愿意投资多少钱", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"time\", \"value\": \"下午五点二十\"}, {\"name\": \"event_name\", \"value\": \"会议\"}, {\"name\": \"person\", \"value\": \"老王\"}]}"}
+{"query": "用户文本：请找下食谱", "response": "{\"intent\": \"cooking_recipe\", \"slots\": []}"}
+{"query": "用户文本：中国的货币汇率是多少", "response": "{\"intent\": \"qa_currency\", \"slots\": [{\"name\": \"place_name\", \"value\": \"中国\"}]}"}
+{"query": "用户文本：定个新的闹钟", "response": "{\"intent\": \"alarm_set\", \"slots\": []}"}
+{"query": "用户文本：删除所有事件", "response": "{\"intent\": \"calendar_remove\", \"slots\": []}"}
+{"query": "用户文本：把房间的灯在下午六点变成琥珀色", "response": "{\"intent\": \"iot_hue_lightchange\", \"slots\": [{\"name\": \"house_place\", \"value\": \"房间\"}, {\"name\": \"time\", \"value\": \"下午六点\"}, {\"name\": \"color_type\", \"value\": \"琥珀色\"}]}"}
+{"query": "用户文本：我在联系人里面有多少清单", "response": "{\"intent\": \"lists_query\", \"slots\": []}"}
+{"query": "用户文本：家俊给我发电子邮件的时候提醒我", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"person\", \"value\": \"家俊\"}]}"}
+{"query": "用户文本：请买一张本周末的火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"time\", \"value\": \"本周末\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：关掉饭厅", "response": "{\"intent\": \"iot_hue_lightoff\", \"slots\": [{\"name\": \"house_place\", \"value\": \"饭厅\"}]}"}
+{"query": "用户文本：告诉我城市交通怎样", "response": "{\"intent\": \"transport_traffic\", \"slots\": [{\"name\": \"place_name\", \"value\": \"城市\"}]}"}
+{"query": "用户文本：安排周五下午两点三十和财务部的会议", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"周五\"}, {\"name\": \"time\", \"value\": \"下午两点三十\"}, {\"name\": \"business_name\", \"value\": \"财务部\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：请订一张从伦敦到曼彻斯特的火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"place_name\", \"value\": \"伦敦\"}, {\"name\": \"place_name\", \"value\": \"曼彻斯特\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：请找出微软在纳斯达克的股价", "response": "{\"intent\": \"qa_stock\", \"slots\": [{\"name\": \"business_name\", \"value\": \"微软\"}]}"}
+{"query": "用户文本：olly 今天的天气预报", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}]}"}
+{"query": "用户文本：下曲播放十面埋伏", "response": "{\"intent\": \"play_music\", \"slots\": [{\"name\": \"song_name\", \"value\": \"十面埋伏\"}]}"}
+{"query": "用户文本：股价详情", "response": "{\"intent\": \"qa_stock\", \"slots\": []}"}
+{"query": "用户文本：歌曲背景", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：定义阐述", "response": "{\"intent\": \"qa_definition\", \"slots\": [{\"name\": \"definition_word\", \"value\": \"阐述\"}]}"}
+{"query": "用户文本：增加星期日与我的公婆的会议提醒、", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"星期日\"}, {\"name\": \"relation\", \"value\": \"公婆\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：告诉我有什么闹钟", "response": "{\"intent\": \"alarm_query\", \"slots\": []}"}
+{"query": "用户文本：晚餐准备好了吗", "response": "{\"intent\": \"takeaway_query\", \"slots\": [{\"name\": \"meal_type\", \"value\": \"晚餐\"}]}"}
+{"query": "用户文本：著名的比里亚尼食谱的清单", "response": "{\"intent\": \"cooking_recipe\", \"slots\": [{\"name\": \"food_type\", \"value\": \"比里亚尼\"}]}"}
+{"query": "用户文本：与我扑克", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"扑克\"}]}"}
+{"query": "用户文本：记住四月二十日是我兄弟的生日", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"四月二十日\"}, {\"name\": \"relation\", \"value\": \"兄弟\"}, {\"name\": \"event_name\", \"value\": \"生日\"}]}"}
+{"query": "用户文本：预约最近的优步", "response": "{\"intent\": \"transport_taxi\", \"slots\": [{\"name\": \"transport_agency\", \"value\": \"优步\"}]}"}
+{"query": "用户文本：告诉浙江卫视我讨厌他们", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"business_name\", \"value\": \"浙江卫视\"}]}"}
+{"query": "用户文本：请不要讲话", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": []}"}
+{"query": "用户文本：现在交通状况怎样", "response": "{\"intent\": \"transport_traffic\", \"slots\": []}"}
+{"query": "用户文本：你能用微博发说我的永和大王出了点问题", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"用微博发\"}, {\"name\": \"business_name\", \"value\": \"永和大王\"}]}"}
+{"query": "用户文本：你能讲一个笑话吗", "response": "{\"intent\": \"general_joke\", \"slots\": []}"}
+{"query": "用户文本：请把屋子里的灯关掉", "response": "{\"intent\": \"iot_hue_lightdim\", \"slots\": [{\"name\": \"house_place\", \"value\": \"屋子\"}]}"}
+{"query": "用户文本：明天气温会高于四十度吗", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"weather_descriptor\", \"value\": \"气温\"}, {\"name\": \"weather_descriptor\", \"value\": \"高于四十度\"}]}"}
+{"query": "用户文本：请打开文件夹应用程序", "response": "{\"intent\": \"takeaway_order\", \"slots\": []}"}
+{"query": "用户文本：siri 请将浴室的灯关掉", "response": "{\"intent\": \"iot_hue_lightoff\", \"slots\": [{\"name\": \"house_place\", \"value\": \"浴室的\"}]}"}
+{"query": "用户文本：道路交通", "response": "{\"intent\": \"transport_traffic\", \"slots\": []}"}
+{"query": "用户文本：做饭的说明", "response": "{\"intent\": \"cooking_recipe\", \"slots\": []}"}
+{"query": "用户文本：发微博投诉在线书店", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"发微博\"}, {\"name\": \"business_name\", \"value\": \"在线书店\"}]}"}
+{"query": "用户文本：红丝绒蛋糕里有什么", "response": "{\"intent\": \"cooking_recipe\", \"slots\": [{\"name\": \"food_type\", \"value\": \"红丝绒蛋糕\"}]}"}
+{"query": "用户文本：将两百除以四", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：我的联系人里男性多还是女性多", "response": "{\"intent\": \"email_querycontact\", \"slots\": []}"}
+{"query": "用户文本：爱", "response": "{\"intent\": \"general_quirky\", \"slots\": []}"}
+{"query": "用户文本：一旦出现一个关于时政的新话题就提醒我", "response": "{\"intent\": \"news_query\", \"slots\": [{\"name\": \"news_topic\", \"value\": \"时政\"}]}"}
+{"query": "用户文本：中国货币的汇率是多少", "response": "{\"intent\": \"qa_currency\", \"slots\": [{\"name\": \"currency_name\", \"value\": \"中国\"}]}"}
+{"query": "用户文本：到剧院的通勤时间是多少", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"剧院\"}]}"}
+{"query": "用户文本：请调到摩奇广播调频九三八", "response": "{\"intent\": \"play_radio\", \"slots\": [{\"name\": \"radio_name\", \"value\": \"调频九三八\"}]}"}
+{"query": "用户文本：我去了商店", "response": "{\"intent\": \"general_quirky\", \"slots\": []}"}
+{"query": "用户文本：我现在没有足够的钱购买任天堂游戏机你能把它从我的亚马逊愿望清单中删除吗", "response": "{\"intent\": \"lists_remove\", \"slots\": []}"}
+{"query": "用户文本：删除清单事项", "response": "{\"intent\": \"lists_remove\", \"slots\": []}"}
+{"query": "用户文本：棒约翰", "response": "{\"intent\": \"takeaway_query\", \"slots\": [{\"name\": \"business_name\", \"value\": \"棒约翰\"}]}"}
+{"query": "用户文本：在过去三个月里我同老王会面几次过", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"time\", \"value\": \"过去三个月\"}, {\"name\": \"person\", \"value\": \"老王\"}, {\"name\": \"event_name\", \"value\": \"会面\"}]}"}
+{"query": "用户文本：olly 他们有外送上门吗", "response": "{\"intent\": \"takeaway_query\", \"slots\": [{\"name\": \"order_type\", \"value\": \"外送\"}]}"}
+{"query": "用户文本：为我多朗读一些南派三叔的书", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"player_setting\", \"value\": \"朗读\"}, {\"name\": \"audiobook_author\", \"value\": \"南派三叔\"}, {\"name\": \"media_type\", \"value\": \"书\"}]}"}
+{"query": "用户文本：描述炉石传说", "response": "{\"intent\": \"qa_definition\", \"slots\": [{\"name\": \"definition_word\", \"value\": \"炉石传说\"}]}"}
+{"query": "用户文本：现在叫辆滴滴来接我", "response": "{\"intent\": \"transport_taxi\", \"slots\": [{\"name\": \"transport_agency\", \"value\": \"滴滴\"}]}"}
+{"query": "用户文本：你能下载我在互联网上可用的播客文件并播放一次吗", "response": "{\"intent\": \"play_podcasts\", \"slots\": []}"}
+{"query": "用户文本：这周每晚都有多冷啊", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"date\", \"value\": \"这周\"}, {\"name\": \"general_frequency\", \"value\": \"每晚\"}, {\"name\": \"weather_descriptor\", \"value\": \"冷\"}]}"}
+{"query": "用户文本：二十二号是星期三吗", "response": "{\"intent\": \"datetime_query\", \"slots\": [{\"name\": \"date\", \"value\": \"二十二号\"}]}"}
+{"query": "用户文本：请你注意明天三点我和李雷有个会面", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"time\", \"value\": \"三点\"}, {\"name\": \"person\", \"value\": \"李雷\"}, {\"name\": \"event_name\", \"value\": \"会面\"}]}"}
+{"query": "用户文本：代替", "response": "{\"intent\": \"lists_remove\", \"slots\": []}"}
+{"query": "用户文本：打开温度", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"weather_descriptor\", \"value\": \"温度\"}]}"}
+{"query": "用户文本：在我的播放列表中播放一首复古歌曲", "response": "{\"intent\": \"play_music\", \"slots\": [{\"name\": \"music_genre\", \"value\": \"复古\"}]}"}
+{"query": "用户文本：你能帮我玩神庙逃亡游戏吗", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"神庙逃亡\"}]}"}
+{"query": "用户文本：记住我是怎样爱上了这首歌", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：你能把房子里所有的灯都变成蓝色吗", "response": "{\"intent\": \"iot_hue_lightchange\", \"slots\": [{\"name\": \"house_place\", \"value\": \"把房子里\"}, {\"name\": \"color_type\", \"value\": \"蓝色\"}]}"}
+{"query": "用户文本：邮件老板说", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"relation\", \"value\": \"老板\"}]}"}
+{"query": "用户文本：设置一个下午八点洗衣服的提醒", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"time\", \"value\": \"下午八点\"}]}"}
+{"query": "用户文本：请更改时区为加拿大", "response": "{\"intent\": \"datetime_convert\", \"slots\": [{\"name\": \"place_name\", \"value\": \"加拿大\"}]}"}
+{"query": "用户文本：三乘四等于多少", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：给我李雷的电话号码", "response": "{\"intent\": \"email_querycontact\", \"slots\": [{\"name\": \"person\", \"value\": \"李雷的\"}, {\"name\": \"personal_info\", \"value\": \"电话号码\"}]}"}
+{"query": "用户文本：我这里和纽约时差是多少", "response": "{\"intent\": \"datetime_convert\", \"slots\": [{\"name\": \"place_name\", \"value\": \"纽约\"}]}"}
+{"query": "用户文本：请删除提醒", "response": "{\"intent\": \"calendar_remove\", \"slots\": []}"}
+{"query": "用户文本：最近的沃尔玛在哪里", "response": "{\"intent\": \"recommendation_locations\", \"slots\": [{\"name\": \"business_name\", \"value\": \"沃尔玛\"}]}"}
+{"query": "用户文本：在有声读物上恢复飞轮海的歌曲", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"media_type\", \"value\": \"有声读物\"}, {\"name\": \"player_setting\", \"value\": \"恢复\"}, {\"name\": \"artist_name\", \"value\": \"飞轮海\"}]}"}
+{"query": "用户文本：请打开部落冲突", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"部落冲突\"}]}"}
+{"query": "用户文本：跟我说说印度和中国的经济和 gdp 吧", "response": "{\"intent\": \"general_quirky\", \"slots\": [{\"name\": \"place_name\", \"value\": \"印度\"}, {\"name\": \"place_name\", \"value\": \"中国\"}]}"}
+{"query": "用户文本：订一张凤凰城二十六号周末去洛杉矶的火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"place_name\", \"value\": \"凤凰城\"}, {\"name\": \"date\", \"value\": \"二十六号周末\"}, {\"name\": \"place_name\", \"value\": \"洛杉矶\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：定个闹钟仅在周一的上午六点", "response": "{\"intent\": \"alarm_set\", \"slots\": [{\"name\": \"date\", \"value\": \"周一\"}, {\"name\": \"timeofday\", \"value\": \"上午\"}, {\"name\": \"time\", \"value\": \"六点\"}]}"}
+{"query": "用户文本：刷新我的收件箱并告诉我关于新电子邮件的信息", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"email_folder\", \"value\": \"收件箱\"}]}"}
+{"query": "用户文本：美元对墨西哥比索的兑换汇率是多少", "response": "{\"intent\": \"qa_currency\", \"slots\": [{\"name\": \"currency_name\", \"value\": \"美元\"}, {\"name\": \"currency_name\", \"value\": \"墨西哥比索\"}]}"}
+{"query": "用户文本：请关掉露台的灯", "response": "{\"intent\": \"iot_hue_lightoff\", \"slots\": [{\"name\": \"house_place\", \"value\": \"露台\"}]}"}
+{"query": "用户文本：在收音机播放广安人民广播电台", "response": "{\"intent\": \"play_radio\", \"slots\": [{\"name\": \"radio_name\", \"value\": \"广安人民广播电台\"}]}"}
+{"query": "用户文本：关停我的第一个闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": []}"}
+{"query": "用户文本：我想调暗灯光", "response": "{\"intent\": \"iot_hue_lightdim\", \"slots\": []}"}
+{"query": "用户文本：这是有史以来最好的乐队", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：打开天龙八部有声读物并且从上次播放的开始播放", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"audiobook_name\", \"value\": \"天龙八部\"}, {\"name\": \"media_type\", \"value\": \"有声读物\"}]}"}
+{"query": "用户文本：清除我的", "response": "{\"intent\": \"calendar_remove\", \"slots\": [{\"name\": \"time\", \"value\": \"清除\"}]}"}
+{"query": "用户文本：你好你能把灯调暗吗", "response": "{\"intent\": \"iot_hue_lightdim\", \"slots\": []}"}
+{"query": "用户文本：设定一个我和约翰明天下午两点的会议", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"person\", \"value\": \"约翰\"}, {\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"time\", \"value\": \"下午两点\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：请给梅梅发一封关于明天的会议的电子邮件", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"person\", \"value\": \"梅梅\"}, {\"name\": \"date\", \"value\": \"明天的\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：你能回复小美接下来三周我将会忙着做项目吗", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"person\", \"value\": \"小美\"}, {\"name\": \"time\", \"value\": \"接下来三周\"}]}"}
+{"query": "用户文本：找食物并且订购", "response": "{\"intent\": \"takeaway_order\", \"slots\": []}"}
+{"query": "用户文本：我想要你开启电视", "response": "{\"intent\": \"iot_wemo_on\", \"slots\": []}"}
+{"query": "用户文本：我喜欢红一些的灯光", "response": "{\"intent\": \"iot_hue_lightchange\", \"slots\": [{\"name\": \"color_type\", \"value\": \"红\"}]}"}
+{"query": "用户文本：歌曲的标题", "response": "{\"intent\": \"music_query\", \"slots\": []}"}
+{"query": "用户文本：删掉日历中所有的事件", "response": "{\"intent\": \"calendar_remove\", \"slots\": []}"}
+{"query": "用户文本：谷歌像素的特点", "response": "{\"intent\": \"general_quirky\", \"slots\": []}"}
+{"query": "用户文本：我的新手机停止工作请发微博给谷歌客服", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"发微博\"}]}"}
+{"query": "用户文本：再读那个一遍", "response": "{\"intent\": \"play_audiobook\", \"slots\": []}"}
+{"query": "用户文本：我想要今天三点的闹钟", "response": "{\"intent\": \"alarm_set\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"time\", \"value\": \"三点\"}]}"}
+{"query": "用户文本：最新更新", "response": "{\"intent\": \"social_query\", \"slots\": []}"}
+{"query": "用户文本：给我叫辆优步", "response": "{\"intent\": \"transport_taxi\", \"slots\": [{\"name\": \"transport_agency\", \"value\": \"优步\"}]}"}
+{"query": "用户文本：播放最新评分四分或以上的摇滚歌曲", "response": "{\"intent\": \"play_music\", \"slots\": [{\"name\": \"music_descriptor\", \"value\": \"评分四分或以上\"}, {\"name\": \"music_genre\", \"value\": \"摇滚\"}]}"}
+{"query": "用户文本：有什么好听的笑话", "response": "{\"intent\": \"general_joke\", \"slots\": [{\"name\": \"joke_type\", \"value\": \"好听的\"}]}"}
+{"query": "用户文本：不要讲话", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": []}"}
+{"query": "用户文本：日记中还缺少什么", "response": "{\"intent\": \"lists_query\", \"slots\": []}"}
+{"query": "用户文本：我有没有给自己留下任何提醒", "response": "{\"intent\": \"calendar_query\", \"slots\": []}"}
+{"query": "用户文本：英国和美国时差为多少", "response": "{\"intent\": \"datetime_convert\", \"slots\": [{\"name\": \"place_name\", \"value\": \"英国\"}, {\"name\": \"place_name\", \"value\": \"美国\"}]}"}
+{"query": "用户文本：告诉我关于郑小美的信息", "response": "{\"intent\": \"email_querycontact\", \"slots\": [{\"name\": \"person\", \"value\": \"郑小美\"}]}"}
+{"query": "用户文本：将灯关掉", "response": "{\"intent\": \"iot_hue_lightoff\", \"slots\": []}"}
+{"query": "用户文本：行动的后果", "response": "{\"intent\": \"qa_definition\", \"slots\": []}"}
+{"query": "用户文本：我需要列一个清单", "response": "{\"intent\": \"lists_createoradd\", \"slots\": []}"}
+{"query": "用户文本：明天上午十点提醒我这个会", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"time\", \"value\": \"上午十点\"}, {\"name\": \"event_name\", \"value\": \"会\"}]}"}
+{"query": "用户文本：下周三我需要穿外套吗", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"date\", \"value\": \"周三\"}, {\"name\": \"weather_descriptor\", \"value\": \"外套\"}]}"}
+{"query": "用户文本：把糖加到食品杂物清单", "response": "{\"intent\": \"lists_createoradd\", \"slots\": [{\"name\": \"list_name\", \"value\": \"食品杂物\"}]}"}
+{"query": "用户文本：他们送外送吗", "response": "{\"intent\": \"takeaway_query\", \"slots\": [{\"name\": \"order_type\", \"value\": \"外送\"}]}"}
+{"query": "用户文本：我今天的日程安排是怎样的", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}]}"}
+{"query": "用户文本：请关电源", "response": "{\"intent\": \"iot_wemo_off\", \"slots\": []}"}
+{"query": "用户文本：我查询了哪些清单", "response": "{\"intent\": \"lists_query\", \"slots\": []}"}
+{"query": "用户文本：点亮客厅的灯光", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": [{\"name\": \"house_place\", \"value\": \"客厅的\"}]}"}
+{"query": "用户文本：给我周六要干的活加上邮局", "response": "{\"intent\": \"lists_createoradd\", \"slots\": [{\"name\": \"date\", \"value\": \"周六\"}, {\"name\": \"list_name\", \"value\": \"活\"}]}"}
+{"query": "用户文本：请打开象棋游戏我想要和你一起玩", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"象棋\"}]}"}
+{"query": "用户文本：设置清单", "response": "{\"intent\": \"lists_createoradd\", \"slots\": []}"}
+{"query": "用户文本：烹饪一些燕麦", "response": "{\"intent\": \"cooking_recipe\", \"slots\": [{\"name\": \"ingredient\", \"value\": \"燕麦\"}]}"}
+{"query": "用户文本：你们有送餐上门吗", "response": "{\"intent\": \"takeaway_query\", \"slots\": [{\"name\": \"order_type\", \"value\": \"送餐\"}]}"}
+{"query": "用户文本：给我找些赛事集锦", "response": "{\"intent\": \"news_query\", \"slots\": [{\"name\": \"news_topic\", \"value\": \"赛事集锦\"}]}"}
+{"query": "用户文本：我想知道北京的天气", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"北京\"}]}"}
+{"query": "用户文本：请把灯光调亮这个让我不太舒服", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": []}"}
+{"query": "用户文本：定个八点的闹钟", "response": "{\"intent\": \"alarm_set\", \"slots\": [{\"name\": \"time\", \"value\": \"八点\"}]}"}
+{"query": "用户文本：我设置的闹钟", "response": "{\"intent\": \"alarm_query\", \"slots\": []}"}
+{"query": "用户文本：我要买一张从好莱坞去奥兰多的火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"place_name\", \"value\": \"从好莱坞去奥兰多\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：你能在下一个和我老板的会议发生一小时前提醒我吗", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"relation\", \"value\": \"老板\"}, {\"name\": \"event_name\", \"value\": \"会议\"}, {\"name\": \"time\", \"value\": \"一小时\"}]}"}
+{"query": "用户文本：汽车在哪里", "response": "{\"intent\": \"audio_volume_up\", \"slots\": []}"}
+{"query": "用户文本：请关闭电源", "response": "{\"intent\": \"iot_wemo_off\", \"slots\": []}"}
+{"query": "用户文本：把那首歌放在我的最爱的列表里", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：请启动咖啡机", "response": "{\"intent\": \"iot_coffee\", \"slots\": [{\"name\": \"device_type\", \"value\": \"咖啡机\"}]}"}
+{"query": "用户文本：关闭八点的闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": [{\"name\": \"time\", \"value\": \"八点\"}]}"}
+{"query": "用户文本：嘿什么是书", "response": "{\"intent\": \"qa_definition\", \"slots\": [{\"name\": \"definition_word\", \"value\": \"书\"}]}"}
+{"query": "用户文本：四加六等于多少", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：我想点中餐外卖", "response": "{\"intent\": \"takeaway_order\", \"slots\": [{\"name\": \"food_type\", \"value\": \"中餐\"}, {\"name\": \"order_type\", \"value\": \"外卖\"}]}"}
+{"query": "用户文本：有史以来最好笑的笑话是什么", "response": "{\"intent\": \"general_joke\", \"slots\": [{\"name\": \"joke_type\", \"value\": \"最好笑的\"}]}"}
+{"query": "用户文本：跟我说说特朗普吧", "response": "{\"intent\": \"news_query\", \"slots\": [{\"name\": \"news_topic\", \"value\": \"特朗普\"}]}"}
+{"query": "用户文本：开始播放一席", "response": "{\"intent\": \"play_podcasts\", \"slots\": [{\"name\": \"podcast_name\", \"value\": \"一席\"}]}"}
+{"query": "用户文本：删掉我的待办清单", "response": "{\"intent\": \"lists_remove\", \"slots\": [{\"name\": \"list_name\", \"value\": \"待办\"}]}"}
+{"query": "用户文本：告诉我有史以来最好笑的笑话", "response": "{\"intent\": \"general_joke\", \"slots\": [{\"name\": \"joke_type\", \"value\": \"最好笑的\"}]}"}
+{"query": "用户文本：去旅行订一张火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：把活动安排在三月十八日的下午五点至下午六点", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"三月十八日\"}, {\"name\": \"time\", \"value\": \"下午五点至下午六点\"}]}"}
+{"query": "用户文本：清除已设的闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": []}"}
+{"query": "用户文本：我给小美的最后一封电子邮件写了些什么", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"person\", \"value\": \"小美\"}]}"}
+{"query": "用户文本：查找最新的迪士尼播客", "response": "{\"intent\": \"play_podcasts\", \"slots\": [{\"name\": \"podcast_name\", \"value\": \"迪士尼\"}]}"}
+{"query": "用户文本：把日历中的事项删除", "response": "{\"intent\": \"calendar_remove\", \"slots\": []}"}
+{"query": "用户文本：和老王在明天三点见面", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"person\", \"value\": \"老王\"}, {\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"time\", \"value\": \"三点\"}]}"}
+{"query": "用户文本：移除最后一个闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": []}"}
+{"query": "用户文本：是谁的生日吗", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"event_name\", \"value\": \"生日\"}]}"}
+{"query": "用户文本：北京明天有运动会吗", "response": "{\"intent\": \"recommendation_events\", \"slots\": [{\"name\": \"place_name\", \"value\": \"北京\"}, {\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"event_name\", \"value\": \"运动会\"}]}"}
+{"query": "用户文本：取消下一次会议", "response": "{\"intent\": \"calendar_remove\", \"slots\": [{\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：发送电子邮件给 joseph at gmail dot com", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"email_address\", \"value\": \"joseph at gmail dot com\"}]}"}
+{"query": "用户文本：呼叫辆拼车去长岛酒吧接我", "response": "{\"intent\": \"transport_taxi\", \"slots\": [{\"name\": \"transport_type\", \"value\": \"拼车\"}, {\"name\": \"place_name\", \"value\": \"长岛酒吧\"}]}"}
+{"query": "用户文本：找下刘若英电影", "response": "{\"intent\": \"recommendation_movies\", \"slots\": []}"}
+{"query": "用户文本：我几乎听不到你的声音", "response": "{\"intent\": \"audio_volume_up\", \"slots\": []}"}
+{"query": "用户文本：你知道这个笑话吗", "response": "{\"intent\": \"general_joke\", \"slots\": []}"}
+{"query": "用户文本：你能帮我听收音机吗", "response": "{\"intent\": \"play_radio\", \"slots\": []}"}
+{"query": "用户文本：请继续阅读有声读物", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"player_setting\", \"value\": \"继续阅读\"}, {\"name\": \"media_type\", \"value\": \"有声读物\"}]}"}
+{"query": "用户文本：你能调大音量吗", "response": "{\"intent\": \"audio_volume_up\", \"slots\": []}"}
+{"query": "用户文本：关闭我七点的闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": [{\"name\": \"time\", \"value\": \"七点\"}]}"}
+{"query": "用户文本：用微博发", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"用微博发\"}]}"}
+{"query": "用户文本：请给我泡杯咖啡", "response": "{\"intent\": \"iot_coffee\", \"slots\": []}"}
+{"query": "用户文本：我在三月二十五日周六有会议吗", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"date\", \"value\": \"三月二十五日周六\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：帮我列出现在正在城里上演的马戏团表演", "response": "{\"intent\": \"recommendation_events\", \"slots\": [{\"name\": \"place_name\", \"value\": \"城里\"}, {\"name\": \"event_name\", \"value\": \"马戏团\"}]}"}
+{"query": "用户文本：现在就给我列出苹果的库存", "response": "{\"intent\": \"qa_stock\", \"slots\": [{\"name\": \"business_name\", \"value\": \"苹果\"}]}"}
+{"query": "用户文本：我有多少提醒", "response": "{\"intent\": \"calendar_query\", \"slots\": []}"}
+{"query": "用户文本：在二月一日和三月十六日之间有什么会议吗", "response": "{\"intent\": \"calendar_query\", \"slots\": [{\"name\": \"date\", \"value\": \"二月一日和三月十六日\"}, {\"name\": \"event_name\", \"value\": \"会议\"}]}"}
+{"query": "用户文本：设置灯光亮度更高", "response": "{\"intent\": \"iot_hue_lightup\", \"slots\": []}"}
+{"query": "用户文本：我的必胜客订单什么时候到", "response": "{\"intent\": \"takeaway_query\", \"slots\": [{\"name\": \"business_name\", \"value\": \"必胜客\"}]}"}
+{"query": "用户文本：开始下一集", "response": "{\"intent\": \"play_podcasts\", \"slots\": [{\"name\": \"podcast_descriptor\", \"value\": \"下一集\"}]}"}
+{"query": "用户文本：拉斯维加斯现在几点", "response": "{\"intent\": \"datetime_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"拉斯维加斯\"}]}"}
+{"query": "用户文本：显示给我过去的一小时收到的任何电子邮件", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"time\", \"value\": \"过去的一小时\"}]}"}
+{"query": "用户文本：呼市首趟火车是什么时间", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"呼市\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：播放倚天屠龙记有声读物", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"audiobook_name\", \"value\": \"倚天屠龙记\"}, {\"name\": \"media_type\", \"value\": \"有声读物\"}]}"}
+{"query": "用户文本：订一张从巴尔的摩马里兰到纽约的火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"place_name\", \"value\": \"巴尔的摩马里兰\"}, {\"name\": \"place_name\", \"value\": \"纽约\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：告诉我附近有什么商店", "response": "{\"intent\": \"recommendation_locations\", \"slots\": [{\"name\": \"business_type\", \"value\": \"商店\"}]}"}
+{"query": "用户文本：检查新的电子邮件", "response": "{\"intent\": \"email_query\", \"slots\": []}"}
+{"query": "用户文本：二百除以十等于多少", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：请取消我周六和我的医生的预约", "response": "{\"intent\": \"calendar_remove\", \"slots\": [{\"name\": \"date\", \"value\": \"周六\"}, {\"name\": \"relation\", \"value\": \"我的医生\"}, {\"name\": \"event_name\", \"value\": \"预约\"}]}"}
+{"query": "用户文本：你能描述一张信用卡吗", "response": "{\"intent\": \"qa_definition\", \"slots\": [{\"name\": \"definition_word\", \"value\": \"信用卡\"}]}"}
+{"query": "用户文本：你对明年爱丁堡的边缘艺术节了解多少", "response": "{\"intent\": \"general_quirky\", \"slots\": [{\"name\": \"date\", \"value\": \"明年\"}, {\"name\": \"place_name\", \"value\": \"爱丁堡\"}, {\"name\": \"event_name\", \"value\": \"边缘艺术节\"}]}"}
+{"query": "用户文本：堵塞我的", "response": "{\"intent\": \"transport_traffic\", \"slots\": []}"}
+{"query": "用户文本：开始播放电台频道八八九", "response": "{\"intent\": \"play_radio\", \"slots\": [{\"name\": \"radio_name\", \"value\": \"八八九\"}]}"}
+{"query": "用户文本：请播放广播", "response": "{\"intent\": \"play_radio\", \"slots\": []}"}
+{"query": "用户文本：关掉我的闹铃", "response": "{\"intent\": \"alarm_remove\", \"slots\": []}"}
+{"query": "用户文本：给我读我的首页最新的帖子", "response": "{\"intent\": \"social_query\", \"slots\": []}"}
+{"query": "用户文本：找到一个有趣的播客关于上一个普利兹克奖的赢家", "response": "{\"intent\": \"play_podcasts\", \"slots\": [{\"name\": \"podcast_descriptor\", \"value\": \"普利兹克奖的赢家\"}]}"}
+{"query": "用户文本：我从李雷那里收到任何新的电子邮件了吗", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"person\", \"value\": \"李雷\"}]}"}
+{"query": "用户文本：找下靠近我的电影", "response": "{\"intent\": \"recommendation_movies\", \"slots\": []}"}
+{"query": "用户文本：给奶奶发封电子邮件说我们星期六来拜访到时候见", "response": "{\"intent\": \"email_sendemail\", \"slots\": [{\"name\": \"relation\", \"value\": \"奶奶\"}]}"}
+{"query": "用户文本：现在北京天气具体是什么情况啊", "response": "{\"intent\": \"weather_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"北京\"}]}"}
+{"query": "用户文本：请注意明天下午两点我正忙着参加一个活动", "response": "{\"intent\": \"calendar_set\", \"slots\": [{\"name\": \"date\", \"value\": \"明天\"}, {\"name\": \"time\", \"value\": \"下午两点\"}]}"}
+{"query": "用户文本：给我去加尔各答热带医学院的当地火车时刻表", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"加尔各答热带医学院\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：把我的灯向下调到低亮度", "response": "{\"intent\": \"iot_hue_lightdim\", \"slots\": []}"}
+{"query": "用户文本：适合通勤的好歌曲", "response": "{\"intent\": \"music_likeness\", \"slots\": []}"}
+{"query": "用户文本：环球时报的热门文章是什么", "response": "{\"intent\": \"news_query\", \"slots\": [{\"name\": \"media_type\", \"value\": \"环球时报\"}]}"}
+{"query": "用户文本：点外卖", "response": "{\"intent\": \"takeaway_order\", \"slots\": [{\"name\": \"order_type\", \"value\": \"外卖\"}]}"}
+{"query": "用户文本：奥莉，这周末有什么新的剧情电影", "response": "{\"intent\": \"recommendation_movies\", \"slots\": [{\"name\": \"time\", \"value\": \"周末\"}, {\"name\": \"movie_type\", \"value\": \"剧情\"}]}"}
+{"query": "用户文本：图书馆的下一个活动是什么", "response": "{\"intent\": \"recommendation_events\", \"slots\": [{\"name\": \"place_name\", \"value\": \"图书馆\"}]}"}
+{"query": "用户文本：订张今天早上八点从这里到西弗吉尼亚查尔斯顿的火车票", "response": "{\"intent\": \"transport_ticket\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"time\", \"value\": \"早上八点\"}, {\"name\": \"place_name\", \"value\": \"西弗吉尼亚查尔斯顿\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：在我的笔记本上有哪些清单", "response": "{\"intent\": \"lists_query\", \"slots\": []}"}
+{"query": "用户文本：激活吸尘器使用它", "response": "{\"intent\": \"iot_cleaning\", \"slots\": [{\"name\": \"device_type\", \"value\": \"吸尘器\"}]}"}
+{"query": "用户文本：六除以二等于多少", "response": "{\"intent\": \"qa_maths\", \"slots\": []}"}
+{"query": "用户文本：我想知道当地评级最好的酒吧", "response": "{\"intent\": \"recommendation_locations\", \"slots\": [{\"name\": \"business_type\", \"value\": \"酒吧\"}]}"}
+{"query": "用户文本：在我的账户里发了一条微博比亚迪公司后续跟进很差我很不满意", "response": "{\"intent\": \"social_post\", \"slots\": [{\"name\": \"media_type\", \"value\": \"微博\"}]}"}
+{"query": "用户文本：我想灯光暗点", "response": "{\"intent\": \"iot_hue_lightdim\", \"slots\": []}"}
+{"query": "用户文本：功夫熊猫第三部", "response": "{\"intent\": \"recommendation_movies\", \"slots\": [{\"name\": \"movie_name\", \"value\": \"功夫熊猫第三部\"}]}"}
+{"query": "用户文本：谁是这首歌曲的歌手", "response": "{\"intent\": \"music_query\", \"slots\": []}"}
+{"query": "用户文本：从我的日历中删除与乔治亚当斯的预约", "response": "{\"intent\": \"calendar_remove\", \"slots\": [{\"name\": \"person\", \"value\": \"乔治亚当斯\"}, {\"name\": \"event_name\", \"value\": \"预约\"}]}"}
+{"query": "用户文本：周二从北京站开出的一零八八一七次列车的检票时间", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"date\", \"value\": \"周二\"}, {\"name\": \"place_name\", \"value\": \"北京站\"}, {\"name\": \"transport_name\", \"value\": \"一零八八一七次\"}, {\"name\": \"transport_type\", \"value\": \"列车\"}]}"}
+{"query": "用户文本：siri 请查询汇率", "response": "{\"intent\": \"qa_currency\", \"slots\": []}"}
+{"query": "用户文本：给我食谱", "response": "{\"intent\": \"cooking_recipe\", \"slots\": []}"}
+{"query": "用户文本：谁是英国现任首相", "response": "{\"intent\": \"qa_factoid\", \"slots\": [{\"name\": \"place_name\", \"value\": \"英国\"}]}"}
+{"query": "用户文本：把客厅的灯调到百分之五十", "response": "{\"intent\": \"iot_hue_lightchange\", \"slots\": [{\"name\": \"house_place\", \"value\": \"客厅\"}, {\"name\": \"change_amount\", \"value\": \"百分之五十\"}]}"}
+{"query": "用户文本：请繼續播放我的有声读物", "response": "{\"intent\": \"play_audiobook\", \"slots\": [{\"name\": \"player_setting\", \"value\": \"繼續播放\"}, {\"name\": \"media_type\", \"value\": \"有声读物\"}]}"}
+{"query": "用户文本：移除星期二九点的闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": [{\"name\": \"date\", \"value\": \"星期二\"}, {\"name\": \"time\", \"value\": \"九点\"}]}"}
+{"query": "用户文本：关掉闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": []}"}
+{"query": "用户文本：告诉我卫报的最新消息", "response": "{\"intent\": \"news_query\", \"slots\": [{\"name\": \"media_type\", \"value\": \"卫报\"}]}"}
+{"query": "用户文本：我给李雷发了关于枪支管制的电子邮件了吗", "response": "{\"intent\": \"email_query\", \"slots\": [{\"name\": \"person\", \"value\": \"李雷\"}]}"}
+{"query": "用户文本：我想知道今天最新的世界新闻", "response": "{\"intent\": \"news_query\", \"slots\": [{\"name\": \"date\", \"value\": \"今天\"}, {\"name\": \"place_name\", \"value\": \"世界\"}]}"}
+{"query": "用户文本：打开梨子爸爸传说", "response": "{\"intent\": \"play_game\", \"slots\": [{\"name\": \"game_name\", \"value\": \"梨子爸爸传说\"}]}"}
+{"query": "用户文本：从伦敦到巴黎有火车吗几点", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"伦敦\"}, {\"name\": \"place_name\", \"value\": \"巴黎\"}, {\"name\": \"transport_type\", \"value\": \"火车\"}]}"}
+{"query": "用户文本：请删除设置为工作日九点的闹钟", "response": "{\"intent\": \"alarm_remove\", \"slots\": [{\"name\": \"date\", \"value\": \"工作日\"}, {\"name\": \"time\", \"value\": \"九点\"}]}"}
+{"query": "用户文本：删除我的清单", "response": "{\"intent\": \"lists_remove\", \"slots\": []}"}
+{"query": "用户文本：从现在开始静音", "response": "{\"intent\": \"audio_volume_mute\", \"slots\": []}"}
+{"query": "用户文本：到机场要多长时间", "response": "{\"intent\": \"transport_query\", \"slots\": [{\"name\": \"place_name\", \"value\": \"机场\"}]}"}
+{"query": "用户文本：olly 我有设置明天的闹钟吗", "response": "{\"intent\": \"alarm_query\", \"slots\": [{\"name\": \"date\", \"value\": \"明天\"}]}"}
+{"query": "用户文本：如果你把我们地区发生的事件告诉我我会很高兴的", "response": "{\"intent\": \"recommendation_events\", \"slots\": []}"}
+{"query": "用户文本：美元对人民币的汇率是多少", "response": "{\"intent\": \"qa_currency\", \"slots\": [{\"name\": \"place_name\", \"value\": \"美元\"}, {\"name\": \"place_name\", \"value\": \"人民币\"}]}"}
+{"query": "用户文本：我需要一杯饮料", "response": "{\"intent\": \"iot_coffee\", \"slots\": []}"}
