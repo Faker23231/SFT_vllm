@@ -115,8 +115,8 @@ def main() -> None:
 
     import torch
     from datasets import Dataset
+    from llmcompressor import oneshot  # 0.8.x 起从顶层导出（旧版在 llmcompressor.transformers）
     from llmcompressor.modifiers.quantization import GPTQModifier
-    from llmcompressor.transformers import oneshot
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     print(f"[info] gpu={torch.cuda.get_device_name(0)} "
@@ -128,11 +128,15 @@ def main() -> None:
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     dataset = Dataset.from_list([{"text": text} for text in texts])
 
+    # 0.8.x 的 GPTQModifier 是 pydantic 模型，group_size 不能作为顶层参数（会 extra_forbidden），
+    # 必须走 scheme 的 dict 形式覆盖；老版本（如 0.6/0.7）则只认字符串 scheme。
     try:
-        recipe = GPTQModifier(targets="Linear", scheme=args.scheme, ignore=args.ignore,
-                              group_size=args.group_size)
-    except TypeError:  # 老版本不接受 group_size 参数，退化为默认 128
-        print("[warn] 当前 llm-compressor 不支持 group_size 参数，使用默认值")
+        recipe = GPTQModifier(
+            targets="Linear", scheme={args.scheme: {"group_size": args.group_size}}, ignore=args.ignore
+        )
+        print(f"[info] GPTQ recipe: scheme={args.scheme} group_size={args.group_size} (dict 形式)")
+    except Exception as exc:  # 老版本不接受 dict/group_size，退化为默认 128
+        print(f"[warn] scheme dict 形式不可用（{type(exc).__name__}），退化为默认 group_size=128")
         recipe = GPTQModifier(targets="Linear", scheme=args.scheme, ignore=args.ignore)
 
     oneshot(

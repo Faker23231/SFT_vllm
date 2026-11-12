@@ -36,7 +36,7 @@ os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")  # 
 
 import torch  # noqa: E402
 from datasets import load_dataset  # noqa: E402
-from peft import LoraConfig, TaskType, get_peft_model, prepare_model_for_kbit_training  # noqa: E402
+from peft import LoraConfig, TaskType  # noqa: E402
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig  # noqa: E402
 from trl import SFTConfig, SFTTrainer  # noqa: E402
 
@@ -84,6 +84,14 @@ def main() -> None:
     print(f"[info] train={len(train_dataset)} validation={len(eval_dataset)}")
 
     tokenizer = AutoTokenizer.from_pretrained(args.model)
+    # 统一用 deploy/chat_template_qwen3_nothink.jinja：
+    #   1. 钉死 enable_thinking=false，与 bench/prompts.py、vLLM 评测口径一致；
+    #   2. 模板里有 {% generation %} 标记，assistant_only_loss=True 才能算出 assistant mask
+    #      （Qwen3 原生模板没有该标记，直接开 assistant_only_loss 会 RuntimeError）。
+    nothink_tpl = BASE / "deploy" / "chat_template_qwen3_nothink.jinja"
+    if nothink_tpl.exists():
+        tokenizer.chat_template = nothink_tpl.read_text(encoding="utf-8")
+        print(f"[info] chat template → {nothink_tpl.name}")
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
@@ -95,8 +103,12 @@ def main() -> None:
         quantization_config=bnb_config,
         attn_implementation="sdpa",  # 40G 卡上用 sdpa 足够，flash-attn 装不上时不必折腾
     )
-    model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
-
+    # 注意：这里**不能**手动 prepare_model_for_kbit_training + get_peft_model。
+    # TRL 0.23 的 SFTTrainer 一旦发现传入 PeftModel，会在 __init__ 里再调
+    # prepare_peft_model() → prepare_model_for_kbit_training()，该函数会把**所有**参数
+    # requires_grad 置 False（包括已注入的 LoRA），结果训练全程 grad_norm=0、权重不变、
+    # 复评分数与基线逐位相同（本仓库踩过这个坑）。
+    # 正确做法：只传 4bit 基座 + peft_config，让 TRL 自己按 kbit 准备 → 注入 LoRA 的顺序执行。
     if torch.cuda.is_available():  # 限一下上限，显存问题立刻报错而不是拖垮机器
         torch.cuda.set_per_process_memory_fraction(args.gpu_mem_fraction, 0)
         print(f"[info] gpu={torch.cuda.get_device_name(0)} "
@@ -110,8 +122,6 @@ def main() -> None:
         bias="none",
         target_modules=ATTN_ONLY if args.attn_only else TARGET_MODULES,
     )
-    model = get_peft_model(model, lora_config)
-    model.print_trainable_parameters()
 
     training_args = SFTConfig(
         output_dir=args.output,
@@ -149,7 +159,12 @@ def main() -> None:
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
         processing_class=tokenizer,
+        peft_config=lora_config,  # 交给 TRL 注入，顺序才是 kbit 准备 → LoRA
     )
+    trainer.model.print_trainable_parameters()
+    trainable = sum(p.numel() for p in trainer.model.parameters() if p.requires_grad)
+    if trainable == 0:
+        raise SystemExit("[fatal] 可训参数为 0：LoRA 被冻结，训练会空转，停止执行")
 
     started = time.time()
     trainer.train()

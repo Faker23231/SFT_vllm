@@ -46,12 +46,12 @@
         {%- endif %}
         {%- if loop.index0 > ns.last_query_index %}
             {%- if loop.last or (not loop.last and reasoning_content) %}
-                {{- '<|im_start|>' + message.role + '\n<think>\n' + reasoning_content.strip('\n') + '\n</think>\n\n' + content.lstrip('\n') }}
+                {{- '<|im_start|>' + message.role + '\n' }}{% generation %}{{- '<think>\n' + reasoning_content.strip('\n') + '\n</think>\n\n' + content.lstrip('\n') + '<|im_end|>\n' }}{% endgeneration %}
             {%- else %}
-                {{- '<|im_start|>' + message.role + '\n' + content }}
+                {{- '<|im_start|>' + message.role + '\n' }}{% generation %}{{- content + '<|im_end|>\n' }}{% endgeneration %}
             {%- endif %}
         {%- else %}
-            {{- '<|im_start|>' + message.role + '\n' + content }}
+            {{- '<|im_start|>' + message.role + '\n' }}{% generation %}{{- content + '<|im_end|>\n' }}{% endgeneration %}
         {%- endif %}
         {%- if message.tool_calls %}
             {%- for tool_call in message.tool_calls %}
@@ -72,7 +72,6 @@
                 {{- '}\n</tool_call>' }}
             {%- endfor %}
         {%- endif %}
-        {{- '<|im_end|>\n' }}
     {%- elif message.role == "tool" %}
         {%- if loop.first or (messages[loop.index0 - 1].role != "tool") %}
             {{- '<|im_start|>user' }}

@@ -37,8 +37,24 @@
 
 | 项 | 值 |
 |---|---|
-| 卡型 | 同 S1（用镜像复原，不换卡型） |
-| 卡时 | 待填（目标 ≤24h） |
+| 卡型 | 同 S1（A100 40G，同一镜像，未换卡型） |
+| 开机时间 | 2026-11-12 09:10 |
+| 卡时 | 进行中（目标 ≤24h） |
+
+**S2 依赖安装（有版本三角，照抄即可）**：
+
+```bash
+pip install peft trl accelerate llmcompressor "torch==2.9.0" -i https://mirrors.cloud.tencent.com/pypi/simple
+pip install "compressed-tensors==0.12.2"          # vllm 0.11.2 硬钉，必须先降回来
+pip install "llmcompressor==0.8.1" --no-deps      # 0.10 要 compressed-tensors 0.14，与 vllm 冲突
+pip install "trl==0.23.0"                          # trl 1.x 要 accelerate>=1.11/datasets>=4.7，与 llmcompressor 0.8.1 互斥
+pip install "accelerate==1.10.1" "datasets==4.1.1" "pillow==11.3.0" "nvidia-ml-py==13.580.82"
+pip install bitsandbytes tensorboard               # QLoRA 与 loss 曲线必需（S1 镜像里没有）
+```
+
+> 遗留：`pip check` 仍会报 llmcompressor 0.8.1 对 torch≤2.8 / transformers≤4.56 的**声明上限**。
+> torch 不能降（vllm 0.11.2 钉 2.9.0），实测 `from llmcompressor import oneshot` 与 GPTQModifier 正常导入，
+> 量化阶段以实际跑通为准；若量化报错优先怀疑这里。
 
 ## 3. 版本矩阵（在实例上执行 `python -c ...` 采集）
 
@@ -57,14 +73,17 @@ nvcc --version | tail -2
 
 | 组件 | S1 实测 | S2 实测 | 备注 |
 |---|---|---|---|
-| python | 3.12.13 | | 3.11 |
-| torch | 2.9.0+cu128 | | cu128；cu13 版在 560 驱动上不可用 |
-| vllm | 0.11.2 | | 0.33.0 需 CUDA 13 驱动，勿用 |
-| transformers | 4.57.6 | | |
-| peft / trl | 未装 | | trl ≥ 0.20 才有 `assistant_only_loss`；S2 前补装 |
-| llm-compressor | 未装 | | GPTQ 量化；S2 前补装 |
-| evalscope | 1.14.1 | | 压测需额外 `evalscope[perf]`（缺 sse_starlette 会 ImportError） |
-| CUDA / 驱动 | 12.8 / 560.35.03 | | nvcc V12.8.93 |
+| python | 3.12.13 | 3.12.13 | 同一 venv `/data/venv` |
+| torch | 2.9.0+cu128 | 2.9.0+cu128 | cu13 版在 560 驱动上不可用 |
+| vllm | 0.11.2 | 0.11.2 | 0.33.0 需 CUDA 13 驱动，勿用 |
+| transformers | 4.57.6 | 4.57.6 | |
+| peft / trl | 未装 | 0.21.2 / 0.23.0 | trl 1.x 与 llmcompressor 0.8.1 的 accelerate/datasets 要求互斥 |
+| llm-compressor | 未装 | 0.8.1 | 配 compressed-tensors 0.12.2；oneshot 改用 `from llmcompressor import oneshot` |
+| compressed-tensors | 0.12.2 | 0.12.2 | vllm 0.11.2 硬钉 ==0.12.2 |
+| accelerate / datasets | — | 1.10.1 / 4.1.1 | 被 llmcompressor 0.8.1 上限压住 |
+| bitsandbytes | 未装 | 0.50.2 | QLoRA 4bit 必需 |
+| evalscope | 1.14.1 | 1.14.1 | 压测需额外 `evalscope[perf]`（缺 sse_starlette 会 ImportError） |
+| CUDA / 驱动 | 12.8 / 560.35.03 | 12.8 / 560.35.03 | nvcc V12.8.93 |
 
 ## 4. vLLM 关键日志（每次起服务都记一次）
 
@@ -76,7 +95,6 @@ nvcc --version | tail -2
 | attention backend | FLASH_ATTN | | sm80 走 FlashAttention |
 | 非 torch 显存 | 见启动日志 Memory profiling | | CUDA graph / activation |
 | 启动耗时 | ~70s（含 8 shard 加载） | | |
-| `gptq_marlin` 是否命中 | — | | 量化没走 marlin 等于白量化 |
 | `gptq_marlin` 是否命中 | — | | 量化没走 marlin 等于白量化 |
 
 采集命令：
@@ -93,5 +111,7 @@ grep -E "KV cache size|concurrency|attention backend|non-torch" logs/serve_*.log
 | 服务启动 OOM | `gpu-memory-utilization` 过高或 `max-model-len` 过大 | 降到 0.85 / 4096 再看 KV cache 容量 |
 | 量化后吞吐没有提升 | 未命中 `gptq_marlin` kernel | 服务加 `--quantization gptq_marlin` |
 | 评测分数异常高 | 训练集与评测集重叠 | 跑 `bench/stats.md` 的泄漏检查 |
-| 训练 OOM | batch 太大或 packing 后单条超长 | batch 4→2，`max_length` 4096→2048 |
+| 训练 OOM（CE logits 一次要 7.6G） | packing + batch 4 × 4096 token，151k 词表 logits 转 fp32 | batch 4→2、grad_accum 4（等效 batch 不变）；实测显存 31.4G/39.5G |
+| `assistant_only_loss=True` 报 "no assistant tokens" | Qwen3 原生 chat template 缺 `{% generation %}` | 用 `deploy/chat_template_qwen3_nothink.jinja`（已加 generation 标记），训练脚本自动加载 |
+| `pip install llmcompressor` 后 vllm 起不来 | llmcompressor 0.10 拉 compressed-tensors 0.14 | 见 §2 S2 依赖四连；`--no-deps` 装 0.8.1 |
 | 合成数据质量差 | 改写温度过低 / 一致性过滤缺失 | 温度 0.8，务必跑 `03_filter.py` |

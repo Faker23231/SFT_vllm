@@ -1,40 +1,38 @@
 {
   "name": "1to1",
   "ratio": "1:1",
-  "actual_ratio": "2352:1855",
+  "actual_ratio": "2352:2352",
   "real": 2352,
-  "synthetic_available": 1855,
-  "synthetic_used": 1855,
+  "synthetic_available": 8703,
+  "synthetic_used": 2352,
   "synthetic_backend": [
-    "mock"
+    "vllm"
   ],
-  "train": 3786,
-  "validation": 421,
+  "train": 4233,
+  "validation": 471,
   "nodes": {
-    "n1_intent": 2085,
-    "n2_slot": 2093,
-    "n3_reply": 20,
-    "n4_escalate": 9
+    "n1_intent": 3123,
+    "n2_slot": 1581
   },
-  "categories": 61,
+  "categories": 60,
   "leak_check": {
     "n1_intent": {
-      "checked": 2085,
+      "checked": 3123,
       "suspicious": 0
     },
     "n2_slot": {
-      "checked": 2093,
+      "checked": 1581,
       "suspicious": 0
     },
     "n3_reply": {
-      "checked": 20,
+      "checked": 0,
       "suspicious": 0
     },
     "n4_escalate": {
-      "checked": 9,
+      "checked": 0,
       "suspicious": 0
     }
   },
-  "sha256_train": "6558cbda4425a2a9",
+  "sha256_train": "cefee60d3590c3c6",
   "seed": 42
 }
